@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wiyrhm8fwxox"]
 
 [ext_resource type="Script" uid="uid://dmahjb457dsuw" path="res://assets/scripts/BatteryTimer.gd" id="1_lwipk"]
+[ext_resource type="PackedScene" uid="uid://ck4w6t8ko18lw" path="res://scenes/UI/objective_ui.tscn" id="2_50a1s"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5m0x8"]
 
@@ -19,10 +20,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -548.0
-offset_top = 31.0
-offset_right = -459.0
-offset_bottom = 58.0
+offset_left = -573.0
+offset_top = 34.0
+offset_right = -484.0
+offset_bottom = 61.0
 grow_horizontal = 2
 show_percentage = false
 script = ExtResource("1_lwipk")
+
+[node name="objective_ui" parent="." unique_id=905169599 instance=ExtResource("2_50a1s")]
+layout_mode = 1
+offset_left = 239.0
+offset_top = 6.0
+offset_right = 239.0
+offset_bottom = 6.0

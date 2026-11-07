@@ -14,8 +14,7 @@ var float_time := 0.0
 #
 #var player_nearby := false
 #var hud
-#
-#func _ready() -> void:
+##func _ready() -> void:
 	#hud = get_tree().get_first_node_in_group("hud")
 #
 #func _on_body_entered(body: Node2D) -> void:
