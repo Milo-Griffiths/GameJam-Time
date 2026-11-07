@@ -16,7 +16,7 @@ var canjump = true
 var Interactive_range = false
 var Interacted = null
 @export
-var push_speed = 600
+var push_speed = 900
 
 
 
