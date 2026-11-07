@@ -15,7 +15,7 @@ func loadnextlevel():
 	get_tree().change_scene_to_packed(level2)
 
 func loaddeath():
-	get_tree().change_scene_to_packed(level2)
+	get_tree().change_scene_to_packed(death)
 
 func enemykilled():
 	enemieskilled += 1

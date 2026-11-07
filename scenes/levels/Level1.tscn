@@ -6910,7 +6910,8 @@ startbackwards = true
 script = ExtResource("1_fh0io")
 
 [node name="stasis" parent="." unique_id=293602661 instance=ExtResource("5_68ib6")]
-position = Vector2(1514, 25)
+position = Vector2(1523, 48)
+scale = Vector2(4, 4)
 scene = "Level3"
 
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
