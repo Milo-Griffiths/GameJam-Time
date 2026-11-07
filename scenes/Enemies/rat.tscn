@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cepnbm7s71wqk"]
+
+[ext_resource type="Script" uid="uid://dnuuo3hu65rb4" path="res://assets/scripts/rat.gd" id="1_cmn6w"]
+[ext_resource type="Texture2D" uid="uid://cb0kfw2hm0w2u" path="res://assets/enemies/PixelRats_Free_Carysaurus/Rat-Cinnamon-Walk.png" id="2_jekt7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4mm"]
+atlas = ExtResource("2_jekt7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05m0u"]
+atlas = ExtResource("2_jekt7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw1id"]
+atlas = ExtResource("2_jekt7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c47j2"]
+atlas = ExtResource("2_jekt7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbrqp"]
+atlas = ExtResource("2_jekt7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdxfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4mm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05m0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw1id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c47j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbrqp")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Rat" type="CharacterBody2D" unique_id=2127364585]
+script = ExtResource("1_cmn6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868381522]
+shape = SubResource("CapsuleShape2D_pdxfl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380315492]
+sprite_frames = SubResource("SpriteFrames_pdxfl")
+animation = &"new_animation"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=390985785]
+target_position = Vector2(36, 0)
+collision_mask = 15
