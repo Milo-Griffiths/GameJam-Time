@@ -15,8 +15,9 @@ func _process(delta: float) -> void:
 
 
 func shoot():
+	var point : Node2D = get_node("Node2D")
 	var instance = projectile.instantiate()
 	instance.dir = rotation
-	instance.spawnpos = global_position
+	instance.spawnpos = point.global_position
 	instance.spawnRot = rotation
 	main.add_child.call_deferred(instance)

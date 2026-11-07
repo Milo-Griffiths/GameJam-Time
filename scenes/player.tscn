@@ -164,5 +164,9 @@ script = ExtResource("10_d2wvv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gun" unique_id=255633166]
 texture_filter = 1
+position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
 frame_progress = 0.71388364
+
+[node name="Node2D" type="Node2D" parent="gun" unique_id=1983733177]
+position = Vector2(13, -0.5)
