@@ -52,10 +52,9 @@ layout_mode = 2
 
 [node name="Key" type="Label" parent="CanvasLayer/InteractionPrompt/MarginContainer/VBoxContainer" unique_id=1535710866]
 layout_mode = 2
-text = "E"
 horizontal_alignment = 1
 
 [node name="PromptText" type="Label" parent="CanvasLayer/InteractionPrompt/MarginContainer/VBoxContainer" unique_id=693652978]
 layout_mode = 2
-text = "Pick up battery"
+text = "Press E"
 horizontal_alignment = 1
