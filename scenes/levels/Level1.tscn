@@ -6915,3 +6915,4 @@ scene = "Level3"
 
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]
+[connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]

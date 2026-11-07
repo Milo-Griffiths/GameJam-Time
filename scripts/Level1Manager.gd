@@ -19,7 +19,12 @@ func loaddeath():
 
 func enemykilled():
 	enemieskilled += 1
-	if enemieskilled == 2 and objective_done:
+	if enemieskilled == 2:
+		objective_done = true
+
+
+
+
+func _on_stasis_scene_switch() -> void:
+	if objective_done:
 		loadnextlevel()
-
-
