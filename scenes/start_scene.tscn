@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2l21faqae8kw"]
+
+[ext_resource type="Script" uid="uid://bdchbu5l4rnie" path="res://scripts/scene_loader.gd" id="1_cokmr"]
+
+[node name="StartScene" type="Node2D" unique_id=916621236]
+
+[node name="SceneLoader" type="Node2D" parent="." unique_id=15833447]
+script = ExtResource("1_cokmr")
