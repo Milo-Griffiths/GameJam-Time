@@ -43,6 +43,7 @@ script = ExtResource("3_dva5b")
 position = Vector2(4.63768, -56.358208)
 shape = SubResource("CircleShape2D_op1xx")
 
-[connection signal="Interact" from="player" to="Interactable" method="_on_player_interact"]
 [connection signal="body_entered" from="Interactable" to="player" method="_on_interactable_body_entered"]
 [connection signal="body_exited" from="Interactable" to="player" method="_on_interactable_body_exited"]
+[connection signal="interactingdist" from="Interactable" to="player" method="_on_interactable_interactingdist"]
+[connection signal="non_interact" from="Interactable" to="player" method="_on_interactable_non_interact"]

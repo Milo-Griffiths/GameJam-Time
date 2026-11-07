@@ -11,7 +11,6 @@ var moving = false
 var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
 var prompt  = null
 var Interactive_range = false
-signal Interact
 
 func _physics_process(delta: float) -> void:
 	moving = false
@@ -44,14 +43,11 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
 
-func _on_interactable_body_entered():
-	Interactive_range = true
+
+func _on_interactable_interactingdist() -> void:
 	prompt = Interact_prompt.Instantiate()
 	
-func _on_interactable_body_exited():
-	Interactive_range = false
-	prompt.queue_free()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Interact"):
-		emit_signal("Interact")
+
+func _on_interactable_non_interact() -> void:
+	prompt.queue_free()
