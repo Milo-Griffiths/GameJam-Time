@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cb0kfw2hm0w2u" path="res://assets/enemies/PixelRats_Free_Carysaurus/Rat-Cinnamon-Walk.png" id="2_jekt7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
+radius = 8.0
+height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dn4mm"]
 atlas = ExtResource("2_jekt7")
@@ -54,15 +56,19 @@ animations = [{
 }]
 
 [node name="Rat" type="CharacterBody2D" unique_id=2127364585]
+scale = Vector2(4, 4)
 script = ExtResource("1_cmn6w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868381522]
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pdxfl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380315492]
+texture_filter = 1
+position = Vector2(-2.75, -8.5)
 sprite_frames = SubResource("SpriteFrames_pdxfl")
 animation = &"new_animation"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=390985785]
-target_position = Vector2(36, 0)
+target_position = Vector2(15, 0)
 collision_mask = 15

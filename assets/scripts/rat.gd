@@ -1,16 +1,18 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export
+var SPEED = 300.0
+@export
+var JUMP_VELOCITY = -400.0
 var dir = 1	
 var ray : RayCast2D
 var sprite : AnimatedSprite2D
 func _ready() -> void:
 	ray = $RayCast2D
 	sprite = $AnimatedSprite2D
-
-
+	
+func _process(delta: float) -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,9 +27,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			sprite.flip_h = false
 
-	var direction = dir
-	if direction:
-		velocity.x = direction * SPEED
+	if dir:
+		velocity.x = dir * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
