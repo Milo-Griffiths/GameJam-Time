@@ -46,7 +46,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interactable_interactingdist() -> void:
-	prompt = Interact_prompt.Instantiate()
+	prompt = Interact_prompt.instantiate()
+	print(prompt.position)
+	print("x y z")
 	
 
 
