@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="1_oblk4"]
 [ext_resource type="Texture2D" uid="uid://cn3w4ji0okutl" path="res://assets/levels/HospitalObjects.png" id="2_1xtnv"]
 [ext_resource type="Texture2D" uid="uid://b6uyl5pja4o4n" path="res://assets/levels/HospitalTilemap.png" id="2_a3cud"]
+[ext_resource type="PackedScene" uid="uid://crnbpy1uvjdxl" path="res://scenes/stasis.tscn" id="4_1xtnv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xtnv"]
 texture = ExtResource("2_a3cud")
@@ -218,3 +219,7 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAALAAQAAAACAAQAAAALAAUAAAACAAUAAAALAAYAAAACAAUAAAALAAoAAAACAAYAAAADAAAAAQAAAAAAAAAEAAAAAQABAAAAAAAGAAAAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_pdxfl")
 collision_enabled = false
+
+[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_1xtnv")]
+position = Vector2(859, 811)
+scale = Vector2(4, 4)
