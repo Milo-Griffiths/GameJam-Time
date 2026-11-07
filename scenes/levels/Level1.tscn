@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://487gph6c01xe"]
 
 [ext_resource type="Texture2D" uid="uid://ctsvowtyqnlse" path="res://assets/levels/Mega_Tileset_Pack.png" id="1_1pwbc"]
+[ext_resource type="Script" uid="uid://b8k1673xxvj4t" path="res://scripts/Level1Manager.gd" id="1_fh0io"]
 [ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="2_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cepnbm7s71wqk" path="res://scenes/Enemies/rat.tscn" id="3_x4si1"]
 
@@ -6898,10 +6899,14 @@ tile_set = SubResource("TileSet_sgp6g")
 position = Vector2(242.99998, -11.999999)
 scale = Vector2(5, 5)
 
-[node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
-
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
 
 [node name="Rat2" parent="." unique_id=2127364585 instance=ExtResource("3_x4si1")]
 position = Vector2(465, -45)
 startbackwards = true
+
+[node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
+script = ExtResource("1_fh0io")
+
+[connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
+[connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]
