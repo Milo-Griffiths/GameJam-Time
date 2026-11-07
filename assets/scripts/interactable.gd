@@ -3,7 +3,7 @@ extends StaticBody2D
 var interactable = false
 signal interactingdist
 signal non_interact
-const interactionDist = 320
+const interactionDist = 100
 
 
 func _process(_delta: float) -> void:

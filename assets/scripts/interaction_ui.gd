@@ -9,7 +9,7 @@ var float_time := 0.0
 
 func _ready() -> void:
 	add_to_group("interaction_ui")
-	prompt_text.text = "Press E"
+	prompt_text.text = "E"
 	interaction_prompt.hide()
 	popup_base_y = interaction_prompt.position.y
 
