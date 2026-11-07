@@ -283,6 +283,8 @@ animations = [{
 scale = Vector2(5.61324, 5.2596927)
 collision_layer = 2
 script = ExtResource("1_g2els")
+SPEED = 400.0
+JUMP_VELOCITY = -500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
@@ -300,12 +302,11 @@ shape = SubResource("RectangleShape2D_t1b08")
 [node name="Player_UI" parent="Camera2D" unique_id=1594529095 instance=ExtResource("10_y4r1p")]
 
 [node name="gun" type="Node2D" parent="." unique_id=1199234887]
+position = Vector2(0, -2)
 script = ExtResource("10_d2wvv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gun" unique_id=255633166]
 texture_filter = 1
-position = Vector2(1, 2)
+position = Vector2(0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
 animation = &"new_animation"
-frame = 1
-frame_progress = 0.104779

@@ -1,7 +1,6 @@
 extends Node2D
-#@onready var main = get_tree().get_root().get_node("Main Menu")
-@onready var projectile = load("res://Scenes/bullet.tscn")
-@onready var main: Node2D = $"."
+@onready var main = get_tree().get_root().get_child(0)
+@onready var projectile = load("res://scenes/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,5 +18,5 @@ func shoot():
 	var instance = projectile.instantiate()
 	instance.dir = rotation
 	instance.spawnpos = global_position
-	#instance.spawnRot = rotation
+	instance.spawnRot = rotation
 	main.add_child.call_deferred(instance)

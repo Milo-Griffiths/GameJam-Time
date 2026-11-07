@@ -8,7 +8,8 @@ var JUMP_VELOCITY = -400.0
 var startbackwards : bool
 @export
 var target_distance : float
-
+@export
+var path = "Level1"
 var dir = 1	
 
 var wallray : RayCast2D
@@ -28,7 +29,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	#target player
-	var player: CharacterBody2D = get_tree().get_root().get_node("Level1").get_node("player")
+	var player: CharacterBody2D = get_tree().get_root().get_node(path).get_node("player")
 	var target : float = (player.position- position).normalized().x
 
 	var distance = player.position.distance_to(position)
