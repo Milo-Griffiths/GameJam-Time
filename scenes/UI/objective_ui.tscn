@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ck4w6t8ko18lw"]
+
+[ext_resource type="Script" uid="uid://dj0n5p7hl8rbf" path="res://assets/scripts/panel_container.gd" id="1_ifi1l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6d1m"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
+shadow_size = 8
+shadow_offset = Vector2(5, 5)
+
+[node name="objective_ui" type="Control" unique_id=905169599]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1322544268]
+layer = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1411268182]
+offset_left = 829.0
+offset_top = 48.0
+offset_right = 1131.0
+offset_bottom = 198.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6d1m")
+script = ExtResource("1_ifi1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=743773396]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=354923333]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1505612216]
+layout_mode = 2
+text = "Objectives"
+
+[node name="ObjectiveText" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2124848870]
+layout_mode = 2
+text = "Objective 1"
+
+[node name="ObjectiveText2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2115282567]
+layout_mode = 2
+text = "Objective 2"
+
+[node name="ObjectiveText3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1942267501]
+layout_mode = 2
+text = "Objective 3"
+
+[node name="ObjectiveText4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=392404887]
+layout_mode = 2
+text = "Objective 4"
