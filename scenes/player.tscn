@@ -247,7 +247,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1b08"]
-size = Vector2(9, 30)
+size = Vector2(10, 30)
 
 [node name="player" type="CharacterBody2D" unique_id=1097559639]
 collision_layer = 2
@@ -261,7 +261,7 @@ autoplay = "awful_idle"
 frame_progress = 0.7160638
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
-position = Vector2(0.5, 1)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t1b08")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980265435]

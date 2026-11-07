@@ -57,7 +57,10 @@ animations = [{
 
 [node name="Rat" type="CharacterBody2D" unique_id=2127364585]
 scale = Vector2(4, 4)
+collision_layer = 4
 script = ExtResource("1_cmn6w")
+SPEED = 100.0
+target_distance = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868381522]
 rotation = 1.5707964
@@ -71,7 +74,7 @@ animation = &"walk"
 
 [node name="WallDetection" type="RayCast2D" parent="." unique_id=390985785]
 target_position = Vector2(15, 0)
-collision_mask = 13
+collision_mask = 9
 
 [node name="Playerdetection" type="RayCast2D" parent="." unique_id=773509831]
 target_position = Vector2(15, 0)
