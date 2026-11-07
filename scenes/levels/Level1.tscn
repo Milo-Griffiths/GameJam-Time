@@ -7028,7 +7028,11 @@ texture = ExtResource("1_1pwbc")
 
 [sub_resource type="TileSet" id="TileSet_sgp6g"]
 physics_layer_0/collision_layer = 1
+<<<<<<< HEAD
+physics_layer_0/collision_mask = 2
+=======
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_1pwbc")
+>>>>>>> 9f9ead2a5cfff8b55db759a9c8466c39fd58c330
 sources/0 = SubResource("TileSetAtlasSource_j08sa")
 
 [node name="Level1" type="Node2D" unique_id=1332319202]
