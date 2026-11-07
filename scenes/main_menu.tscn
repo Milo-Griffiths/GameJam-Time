@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cptriun5byqba"]
 
 [ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://bdchbu5l4rnie" path="res://scripts/scene_loader.gd" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://bdchbu5l4rnie" path="res://assets/scripts/scene_loader.gd" id="2_ekxnf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dch4e"]
 bg_color = Color(1, 1, 1, 1)
