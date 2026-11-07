@@ -6,8 +6,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var moving = false
+
+#interaction stuff
+var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
+var prompt  = null
 var Interactive_range = false
-var Interacted = null
+signal Interact
 
 func _physics_process(delta: float) -> void:
 	moving = false
@@ -40,6 +44,14 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
 
-func _on_interactable_body_entered(body: Node2D) -> void:
-	pass
+func _on_interactable_body_entered():
+	Interactive_range = true
+	prompt = Interact_prompt.Instantiate()
 	
+func _on_interactable_body_exited():
+	Interactive_range = false
+	prompt.queue_free()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Interact"):
+		emit_signal("Interact")

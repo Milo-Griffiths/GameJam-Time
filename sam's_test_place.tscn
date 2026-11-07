@@ -20,6 +20,7 @@ shape = SubResource("WorldBoundaryShape2D_op1xx")
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("1_afoaj")]
 position = Vector2(529, 340)
+scale = Vector2(5, 5)
 collision_mask = 32767
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1859164399]
@@ -39,5 +40,9 @@ collision_mask = 2
 script = ExtResource("3_dva5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1901012832]
-position = Vector2(2.7826085, -18.149254)
+position = Vector2(4.63768, -56.358208)
 shape = SubResource("CircleShape2D_op1xx")
+
+[connection signal="Interact" from="player" to="Interactable" method="_on_player_interact"]
+[connection signal="body_entered" from="Interactable" to="player" method="_on_interactable_body_entered"]
+[connection signal="body_exited" from="Interactable" to="player" method="_on_interactable_body_exited"]
