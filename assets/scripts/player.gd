@@ -10,8 +10,9 @@ var moving = false
 var canjump = true
 
 #interaction stuff
-var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
-var prompt  = null
+#var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
+#var prompt  = null
+@onready var interaction_ui: InteractionUI = get_tree().get_first_node_in_group("interaction_ui") as InteractionUI
 var Interactive_range = false
 var Interacted = null
 @export
@@ -71,12 +72,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interactable_interactingdist() -> void:
-	if(prompt == null):
-		prompt = Interact_prompt.instantiate()
-
-	
-
+	interaction_ui.show_prompt()
 
 func _on_interactable_non_interact() -> void:
-	prompt.queue_free()
-	prompt = null
+	interaction_ui.hide_prompt()
