@@ -115,7 +115,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 120
-text = "Game title"
+text = "THE 1000 YEAR CURE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -123,3 +123,4 @@ vertical_alignment = 1
 script = ExtResource("2_ekxnf")
 
 [connection signal="button_down" from="VBoxContainer/Play" to="SceneLoader" method="_on_play_button_down"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="SceneLoader" method="_on_exit_pressed"]
