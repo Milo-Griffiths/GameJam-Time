@@ -4,7 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-
+var Interactive_range = false
+var Interacted = null
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,3 +25,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_interactable_body_entered(body: Node2D) -> void:
+	print("in interactive range")
