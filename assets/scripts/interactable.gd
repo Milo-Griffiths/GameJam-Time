@@ -3,6 +3,7 @@ extends StaticBody2D
 var interactable = false
 signal interactingdist
 signal non_interact
+signal interactedwith
 const interactionDist = 100
 
 
@@ -24,5 +25,9 @@ func _process(_delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("Interact") and interactable:
 		print("hdsfdbjkasnd")
+		interactedwith.emit()
+		non_interact.emit()
+		queue_free()
+
 	
 	
