@@ -23,13 +23,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="TimeJam"
-<<<<<<< HEAD
-=======
 "<<<<<<<HEAD[layer_names]2d_physics/layer_1"="Environment1"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Objects"
->>>>>>> c7ccda77443a0df7605fc93077322904a80c3ef2
 
 [input]
 
