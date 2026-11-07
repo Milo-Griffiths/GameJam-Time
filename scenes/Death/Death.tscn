@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bm2xqnreshdkh"]
+
+[ext_resource type="Script" uid="uid://c8f8p0m8afbj6" path="res://assets/scripts/death.gd" id="1_12uvj"]
+[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="2_n3m1c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shr4g"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1f2c"]
+bg_color = Color(0.63529414, 0.63529414, 0.63529414, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf13r"]
+bg_color = Color(0.8235294, 0.8235294, 0.8235294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Death" type="Control" unique_id=57974595]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12uvj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1092843938]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1043470904]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -77.5
+offset_right = 225.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouDied" type="Label" parent="." unique_id=1619021101]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 85.0
+offset_right = 801.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("2_n3m1c")
+theme_override_font_sizes/font_size = 120
+text = "You died!"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="." unique_id=1868915970]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 328.0
+offset_right = 720.0
+offset_bottom = 473.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_shr4g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s1f2c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tf13r")
+text = "Retry"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
