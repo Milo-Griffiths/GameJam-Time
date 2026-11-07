@@ -123,3 +123,4 @@ vertical_alignment = 1
 script = ExtResource("2_ekxnf")
 
 [connection signal="button_down" from="VBoxContainer/Play" to="SceneLoader" method="_on_play_button_down"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="SceneLoader" method="_on_exit_pressed"]
