@@ -12,20 +12,30 @@ var target_distance : float
 var path = "Level1"
 var dir = 1	
 
+signal killed
+
+
 var wallray : RayCast2D
 var playerray : RayCast2D
 var sprite : AnimatedSprite2D
+var manager : Node2D
+var bulletdetection : ShapeCast2D
 
 func _ready() -> void:
 	wallray = $WallDetection
 	playerray = $Playerdetection
 	sprite = $AnimatedSprite2D
+	bulletdetection = $ShapeCast2D
 	if startbackwards:
 		flip()
 	
 func _process(_delta: float) -> void:
 	if playerray.is_colliding():
 		print("ow")
+	if bulletdetection.is_colliding():
+		killed.emit()
+		queue_free()
+
 
 func _physics_process(delta: float) -> void:
 	#target player
@@ -51,6 +61,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	
+
 
 
 
@@ -61,3 +74,5 @@ func flip():
 		sprite.flip_h = true
 	else:
 		sprite.flip_h = false
+func tell():
+	pass
