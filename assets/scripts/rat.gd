@@ -10,6 +10,8 @@ var startbackwards : bool
 var target_distance : float
 @export
 var path = "Level1"
+@export
+var jumpspeed : float
 var dir = 1	
 
 signal killed
@@ -20,6 +22,7 @@ var playerray : RayCast2D
 var sprite : AnimatedSprite2D
 var manager : Node2D
 var bulletdetection : ShapeCast2D
+var jumping : bool = false
 
 func _ready() -> void:
 	wallray = $WallDetection
@@ -43,15 +46,17 @@ func _physics_process(delta: float) -> void:
 	var target : float = (player.position- position).normalized().x
 
 	var distance = player.position.distance_to(position)
-	if distance < target_distance:
+	if distance < target_distance and is_on_floor():
 		if target > 0 and dir == -1:
 			flip()
 		elif target < 0 and dir == 1:
 			flip()
+		velocity.y = JUMP_VELOCITY
+	
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	if wallray.is_colliding():
 		flip()
 
@@ -59,9 +64,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = dir * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+	if !is_on_floor():
+		velocity.x = velocity.x * 3
 	
+	move_and_slide()
+
+
 	
 
 
