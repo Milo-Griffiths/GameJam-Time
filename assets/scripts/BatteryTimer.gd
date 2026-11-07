@@ -2,6 +2,7 @@ extends ProgressBar
 
 var Initial_Time = 900
 var time = 900
+var timepasses : bool
 
 func _ready() -> void:
 	time = Initial_Time

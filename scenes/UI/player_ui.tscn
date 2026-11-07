@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wiyrhm8fwxox"]
 
-[ext_resource type="Script" uid="uid://dmahjb457dsuw" path="res://assets/BatteryTimer.gd" id="1_lwipk"]
+[ext_resource type="Script" uid="uid://dmahjb457dsuw" path="res://assets/scripts/BatteryTimer.gd" id="1_lwipk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5m0x8"]
 
