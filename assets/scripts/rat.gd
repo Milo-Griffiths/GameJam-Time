@@ -19,7 +19,6 @@ func _ready() -> void:
 	wallray = $WallDetection
 	playerray = $Playerdetection
 	sprite = $AnimatedSprite2D
-	sprite.play("walk")
 	if startbackwards:
 		flip()
 	
