@@ -23,14 +23,16 @@ var push_speed = 900
 @export var ACCEL_AIR: float = 500.0
 
 
-func _physics_process(delta: float) -> void:
-	
+func _physics_process(delta: float) -> void:	
+	var air = false
 	var dir_to_mouse: Vector2 = (get_global_mouse_position() - global_position).normalized()
 	var opposite_dir: Vector2 = -dir_to_mouse
 	moving = false
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		animated_sprite_2d.animation = "air"
+		air = true
 	else:
 		canjump = true
 		
@@ -43,9 +45,9 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	var accel := ACCEL_GROUND if is_on_floor() else ACCEL_AIR
-	if velocity.x > 1 or velocity.x < -1:
+	if (velocity.x > 1 or velocity.x < -1) and not air:
 			animated_sprite_2d.animation = "awful"
-	else:
+	elif not air:
 			animated_sprite_2d.animation = "awful_idle"
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
