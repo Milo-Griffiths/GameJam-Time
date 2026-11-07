@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cptriun5byqba"]
 
-[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dctuw4dxpbykp" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_l6cm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dch4e"]
 bg_color = Color(1, 1, 1, 1)
@@ -29,6 +30,8 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpue2"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
@@ -54,6 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=241798514]
 layout_mode = 1
@@ -74,30 +78,42 @@ theme_override_constants/separation = 35
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_dch4e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
 text = "Play"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=959305592]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_jpue2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
 text = "Settings"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1066117826]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qmdb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
 text = "Exit"
 
 [node name="Label" type="Label" parent="." unique_id=160481533]
@@ -112,8 +128,12 @@ offset_bottom = 143.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
-theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 120
 text = "Game title"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
