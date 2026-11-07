@@ -1,14 +1,9 @@
 [gd_scene format=4 uid="uid://487gph6c01xe"]
 
 [ext_resource type="Texture2D" uid="uid://ctsvowtyqnlse" path="res://assets/levels/Mega_Tileset_Pack.png" id="1_1pwbc"]
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://pcnauwhgi0bi" path="res://assets/scripts/interactable.gd" id="1_fh0io"]
-=======
 [ext_resource type="Script" uid="uid://b8k1673xxvj4t" path="res://scripts/Level1Manager.gd" id="1_fh0io"]
->>>>>>> ca30d1dd1b25998adfb83ce50748e300b0c39498
 [ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="2_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cepnbm7s71wqk" path="res://scenes/Enemies/rat.tscn" id="3_x4si1"]
-[ext_resource type="Texture2D" uid="uid://n845cemt56jn" path="res://assets/bullet.png" id="5_68ib6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4eolq"]
 
@@ -6892,9 +6887,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_4eolq")
 sources/1 = SubResource("TileSetAtlasSource_1pwbc")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_op1xx"]
-radius = 49.47727
-
 [node name="Level1" type="Node2D" unique_id=1332319202]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=839952174]
@@ -6913,28 +6905,8 @@ scale = Vector2(5, 5)
 position = Vector2(465, -45)
 startbackwards = true
 
-<<<<<<< HEAD
-[node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(1094, 64)
-SPEED = 300.0
-JUMP_VELOCITY = -400.0
-
-[node name="INTERACTABLE" type="StaticBody2D" parent="." unique_id=1132298132]
-position = Vector2(900, 80)
-script = ExtResource("1_fh0io")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="INTERACTABLE" unique_id=654386577]
-shape = SubResource("CircleShape2D_op1xx")
-
-[node name="Sprite2D" type="Sprite2D" parent="INTERACTABLE" unique_id=976313412]
-texture = ExtResource("5_68ib6")
-
-[connection signal="interactingdist" from="INTERACTABLE" to="player" method="_on_interactable_interactingdist"]
-[connection signal="non_interact" from="INTERACTABLE" to="player" method="_on_interactable_non_interact"]
-=======
 [node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
 script = ExtResource("1_fh0io")
 
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]
->>>>>>> ca30d1dd1b25998adfb83ce50748e300b0c39498
