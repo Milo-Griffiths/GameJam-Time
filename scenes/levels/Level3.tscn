@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="1_53p26"]
 [ext_resource type="Texture2D" uid="uid://b6uyl5pja4o4n" path="res://assets/levels/HospitalTilemap.png" id="2_g0tkw"]
 [ext_resource type="PackedScene" uid="uid://cepnbm7s71wqk" path="res://scenes/Enemies/rat.tscn" id="3_3825t"]
+[ext_resource type="PackedScene" uid="uid://crnbpy1uvjdxl" path="res://scenes/stasis.tscn" id="4_g0tkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2basl"]
 texture = ExtResource("2_g0tkw")
@@ -142,7 +143,7 @@ sources/1 = SubResource("TileSetAtlasSource_2basl")
 [node name="Level3" type="Node2D" unique_id=878828158]
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("1_53p26")]
-position = Vector2(6, 13)
+position = Vector2(153, -307)
 SPEED = 300.0
 JUMP_VELOCITY = -400.0
 
@@ -155,3 +156,7 @@ tile_set = SubResource("TileSet_ohs4u")
 position = Vector2(262, 21)
 scale = Vector2(1.6876224, 1.763763)
 path = "Level3"
+
+[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_g0tkw")]
+position = Vector2(80, -127)
+scene = "Level1"
