@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2cqe4xbq701h"]
 
 [ext_resource type="Script" uid="uid://dsw5u2roqe50o" path="res://assets/scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bayb1tjucempf" path="res://assets/player/sams iteration/New Piskel (14).png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://d2s3l5fy88vfk" path="res://assets/player/sams iteration/New Piskel (12).png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://c7yudyglpnk8e" path="res://assets/player/sams iteration/New Piskel (13).png" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
@@ -44,6 +45,14 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1b08"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fjrip")
+}],
+"loop": 1,
+"name": &"air",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
@@ -137,7 +146,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t1b08")
 animation = &"awful_idle"
 autoplay = "awful_idle"
-frame_progress = 0.61858636
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
 position = Vector2(0.06052116, 1)
@@ -157,4 +165,4 @@ script = ExtResource("10_d2wvv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gun" unique_id=255633166]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ohs4u")
-frame_progress = 0.3156182
+frame_progress = 0.71388364
