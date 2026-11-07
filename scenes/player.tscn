@@ -303,12 +303,11 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -300)
 
 [node name="gun" type="Node2D" parent="." unique_id=1199234887]
+position = Vector2(0, -2)
 script = ExtResource("10_d2wvv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gun" unique_id=255633166]
 texture_filter = 1
-position = Vector2(1, 2)
+position = Vector2(0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
 animation = &"new_animation"
-frame = 1
-frame_progress = 0.104779
