@@ -15,3 +15,7 @@ func loadscene1():
 
 func _on_play_button_down() -> void:
 	loadscene1()
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
