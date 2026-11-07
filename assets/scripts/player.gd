@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 const SPEED = 300.0
@@ -19,13 +20,22 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
+	if velocity.x > 1 or velocity.x < -1:
+			animated_sprite_2d.animation = "awful"
+	else:
+			animated_sprite_2d.animation = "awful_idle"
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
+	
+	
+	if direction == 1.0:
+		animated_sprite_2d.flip_h = false
+	elif direction == -1.0:
+		animated_sprite_2d.flip_h = true
 
 func _on_interactable_body_entered(body: Node2D) -> void:
 	print("in interactive range")
