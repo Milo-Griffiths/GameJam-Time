@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://du8pfsovnyj8l" path="res://assets/player/awful/IncredibleWalker2.png" id="4_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://chfficgimbvpn" path="res://assets/player/awful/IncredibleWalker3.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cgjyf8ump1jld" path="res://assets/player/awful/IncredibleWalker4.png" id="6_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://dersmwx36twdx" path="res://assets/player/awful/Idle.png" id="7_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_smehm")
@@ -40,6 +41,10 @@ region = Rect2(886, 443, 443, 443)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
 atlas = ExtResource("2_smehm")
 region = Rect2(1329, 443, 443, 443)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("7_ur7pv")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -167,6 +172,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}],
+"loop": 1,
+"name": &"awful_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
 }, {
 "duration": 1.0,
@@ -243,8 +256,9 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t1b08")
-animation = &"awful"
-frame_progress = 0.30166978
+animation = &"awful_idle"
+autoplay = "awful_idle"
+frame_progress = 0.7160638
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
 position = Vector2(0.5, 1)
