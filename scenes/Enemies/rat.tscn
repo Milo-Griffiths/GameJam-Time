@@ -51,7 +51,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sbrqp")
 }],
 "loop": 1,
-"name": &"new_animation",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -65,10 +65,14 @@ shape = SubResource("CapsuleShape2D_pdxfl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380315492]
 texture_filter = 1
-position = Vector2(-2.75, -8.5)
+position = Vector2(-2.75, -8)
 sprite_frames = SubResource("SpriteFrames_pdxfl")
-animation = &"new_animation"
+animation = &"walk"
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=390985785]
+[node name="WallDetection" type="RayCast2D" parent="." unique_id=390985785]
 target_position = Vector2(15, 0)
-collision_mask = 15
+collision_mask = 13
+
+[node name="Playerdetection" type="RayCast2D" parent="." unique_id=773509831]
+target_position = Vector2(15, 0)
+collision_mask = 2
