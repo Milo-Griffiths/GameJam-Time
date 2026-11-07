@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ck4w6t8ko18lw"]
 
 [ext_resource type="Script" uid="uid://dj0n5p7hl8rbf" path="res://assets/scripts/panel_container.gd" id="1_ifi1l"]
+[ext_resource type="Script" uid="uid://c8quu5f4sr4eb" path="res://assets/scripts/objective_ui.gd" id="1_o6d1m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6d1m"]
 bg_color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
@@ -24,15 +25,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o6d1m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1322544268]
 layer = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1411268182]
-offset_left = 829.0
-offset_top = 48.0
-offset_right = 1131.0
-offset_bottom = 198.0
+offset_left = 834.0
+offset_top = 10.0
+offset_right = 1136.0
+offset_bottom = 160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_o6d1m")
 script = ExtResource("1_ifi1l")
 

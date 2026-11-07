@@ -45,6 +45,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.animation = "awful_idle"
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
+		#allow instant stopping / change direction
+		if direction == 1 and velocity.x < 0:
+			velocity.x = 0
+		if direction == -1 and velocity.x > 0:
+			velocity.x = 0
 		moving = true
 	else:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
@@ -62,9 +67,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interactable_interactingdist() -> void:
-	prompt = Interact_prompt.Instantiate()
+	if(prompt == null):
+		prompt = Interact_prompt.instantiate()
+
 	
 
 
 func _on_interactable_non_interact() -> void:
 	prompt.queue_free()
+	prompt = null

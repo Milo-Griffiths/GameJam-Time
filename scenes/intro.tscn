@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://yfckkk8t76bq"]
+
+[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_ioskq"]
+[ext_resource type="Script" uid="uid://c2yiwh42aq0me" path="res://assets/scripts/intro.gd" id="1_yjqpq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bx60"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2l1n"]
+bg_color = Color(0.63529414, 0.63529414, 0.63529414, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfs7u"]
+bg_color = Color(0.8235294, 0.8235294, 0.8235294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Intro" type="Control" unique_id=1227691560]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjqpq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=997681452]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -431.75
+offset_top = -295.75
+offset_right = 431.75
+offset_bottom = 295.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_ioskq")
+theme_override_font_sizes/normal_font_size = 60
+text = "A supercancer outbreak has happened. You are a robot and you need to find the cure for the humans, who are in a stasis chamber. First, you need to make your way through challeging levels completing various objectives, then you can craft the cure and save the humans..."
+
+[node name="Return" type="Button" parent="." unique_id=1099978993]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 531.0
+offset_right = 1089.0
+offset_bottom = 624.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_4bx60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i2l1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wfs7u")
+text = "Return"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
