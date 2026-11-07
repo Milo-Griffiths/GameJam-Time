@@ -21,5 +21,3 @@ func _physics_process(_delta: float) -> void:
 	if cast.is_colliding():
 		queue_free()
 	move_and_collide(velocity)
-
-
