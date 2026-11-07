@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://caxahvq05ro1b"]
+
+[ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="1_afoaj"]
+[ext_resource type="Texture2D" uid="uid://rx6shysrh1ml" path="res://icon.svg" id="2_dva5b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_op1xx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_op1xx"]
+radius = 102.10045
+
+[node name="sam\'s test place" type="Node2D" unique_id=727020004]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=905870546]
+position = Vector2(529, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1666619897]
+position = Vector2(40, 66)
+shape = SubResource("WorldBoundaryShape2D_op1xx")
+
+[node name="player" parent="." unique_id=1097559639 instance=ExtResource("1_afoaj")]
+position = Vector2(529, 340)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1859164399]
+position = Vector2(707.5, 434.5)
+scale = Vector2(0.5390625, 0.5234375)
+texture = ExtResource("2_dva5b")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=473381185]
+position = Vector2(430, 442.99997)
+scale = Vector2(0.5390625, 0.5234375)
+texture = ExtResource("2_dva5b")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1553563126]
+position = Vector2(707.5, 434.5)
+scale = Vector2(0.5390625, 0.5234375)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1901012832]
+position = Vector2(2.7826085, -18.149254)
+shape = SubResource("CircleShape2D_op1xx")
+
+[connection signal="body_entered" from="Interactable" to="player" method="_on_interactable_body_entered"]
