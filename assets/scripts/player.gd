@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
 @export
 var SPEED = 300.0
 @export
@@ -69,13 +68,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
-
-
-#func _on_interactable_interactingdist() -> void:
-	#interaction_ui.show_prompt()
-#
-#func _on_interactable_non_interact() -> void:
-	#interaction_ui.hide_prompt()
 
 
 func _on_static_body_2d_interactingdist() -> void:
