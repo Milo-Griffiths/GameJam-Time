@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b6uyl5pja4o4n" path="res://assets/levels/HospitalTilemap.png" id="2_a3cud"]
 [ext_resource type="Texture2D" uid="uid://bh0670lomurw2" path="res://assets/levels/HospitalWallpapers.png" id="3_2p574"]
 [ext_resource type="PackedScene" uid="uid://crnbpy1uvjdxl" path="res://scenes/stasis.tscn" id="4_1xtnv"]
+[ext_resource type="Script" uid="uid://pcnauwhgi0bi" path="res://assets/scripts/interactable.gd" id="5_interactable"]
+[ext_resource type="PackedScene" uid="uid://b4d37ioaqtv6y" path="res://scenes/UI/interaction_ui.tscn" id="6_interaction_ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interaction"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xtnv"]
 texture = ExtResource("2_a3cud")
@@ -276,6 +280,15 @@ z_index = 2
 position = Vector2(-17, -111)
 scale = Vector2(4, 4)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=125572003]
+position = Vector2(439, -13)
+script = ExtResource("5_interactable")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=594048581]
+shape = SubResource("RectangleShape2D_interaction")
+
+[node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("6_interaction_ui")]
+
 [node name="Objects-infront" type="TileMapLayer" parent="." unique_id=451504986]
 z_index = 3
 texture_filter = 1
@@ -288,3 +301,6 @@ collision_enabled = false
 [node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_1xtnv")]
 position = Vector2(859, 811)
 scale = Vector2(4, 4)
+
+[connection signal="interactingdist" from="StaticBody2D" to="player" method="_on_static_body_2d_interactingdist"]
+[connection signal="non_interact" from="StaticBody2D" to="player" method="_on_static_body_2d_non_interact"]

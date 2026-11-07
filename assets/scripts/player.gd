@@ -12,7 +12,7 @@ var canjump = true
 #interaction stuff
 #var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
 #var prompt  = null
-@onready var interaction_ui: InteractionUI = get_tree().get_first_node_in_group("interaction_ui") as InteractionUI
+#@onready var interaction_ui: InteractionUI = get_tree().get_first_node_in_group("interaction_ui") as InteractionUI
 var Interactive_range = false
 var Interacted = null
 @export
@@ -71,8 +71,21 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true
 
 
-func _on_interactable_interactingdist() -> void:
-	interaction_ui.show_prompt()
+#func _on_interactable_interactingdist() -> void:
+	#interaction_ui.show_prompt()
+#
+#func _on_interactable_non_interact() -> void:
+	#interaction_ui.hide_prompt()
 
-func _on_interactable_non_interact() -> void:
-	interaction_ui.hide_prompt()
+
+func _on_static_body_2d_interactingdist() -> void:
+	var ui: InteractionUI = get_tree().get_first_node_in_group("interaction_ui") as InteractionUI
+
+	if ui != null:
+		ui.show_prompt()
+
+func _on_static_body_2d_non_interact() -> void:
+	var ui: InteractionUI = get_tree().get_first_node_in_group("interaction_ui") as InteractionUI
+
+	if ui != null:
+		ui.hide_prompt()

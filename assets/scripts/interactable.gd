@@ -3,11 +3,11 @@ extends StaticBody2D
 var interactable = false
 signal interactingdist
 signal non_interact
-const interactionDist = 100
+const interactionDist = 320
 
 
 func _process(_delta: float) -> void:
-	var player: CharacterBody2D = get_tree().get_root().get_node("Level1").get_node("player")
+	var player: CharacterBody2D = get_tree().get_root().get_node("Level2").get_node("player")
 	var distance: float = global_position.distance_to(player.global_position)
 	var now_interactable: bool = distance < interactionDist
 
