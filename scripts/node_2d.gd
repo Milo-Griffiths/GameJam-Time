@@ -18,5 +18,5 @@ func shoot():
 	var instance = projectile.instantiate()
 	instance.dir = rotation
 	instance.spawnpos = global_position
-	#instance.spawnRot = rotation
+	instance.spawnRot = rotation
 	main.add_child.call_deferred(instance)
