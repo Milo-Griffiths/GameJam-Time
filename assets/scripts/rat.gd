@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	#target player
-	var player: CharacterBody2D = get_tree().get_root().get_node("Level1").get_node("player")
+	var player: CharacterBody2D = get_tree().get_root().get_node(path).get_node("player")
 	var target : float = (player.position- position).normalized().x
 
 	var distance = player.position.distance_to(position)
