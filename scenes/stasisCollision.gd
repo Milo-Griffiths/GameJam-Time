@@ -1,5 +1,4 @@
 extends CollisionShape2D
-var level1 = preload("res://scenes/levels/Level1.tscn")
 var inside = false
 var scene = ""
 signal sigout
