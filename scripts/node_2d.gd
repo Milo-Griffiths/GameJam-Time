@@ -1,6 +1,6 @@
 extends Node2D
 #@onready var main = get_tree().get_root().get_node("Main Menu")
-@onready var projectile = load("res://Scenes/bullet.tscn")
+@onready var projectile = load("res://scenes/bullet.tscn")
 @onready var main: Node2D = $"."
 
 # Called when the node enters the scene tree for the first time.
