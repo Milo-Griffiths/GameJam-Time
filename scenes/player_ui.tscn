@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://8nnkaao1p3jj"]
+
+[ext_resource type="Script" path="res://scripts/BatteryTimer.gd" id="1_jkj6h"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5m0x8"]
+
+[node name="Player_UI" type="Control" unique_id=1594529095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=367329032]
+modulate = Color(0, 0.9221238, 0.93135834, 1)
+material = SubResource("CanvasItemMaterial_5m0x8")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -548.0
+offset_top = 31.0
+offset_right = -459.0
+offset_bottom = 58.0
+grow_horizontal = 2
+show_percentage = false
+script = ExtResource("1_jkj6h")
