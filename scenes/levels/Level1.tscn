@@ -6893,3 +6893,5 @@ tile_map_data = PackedByteArray("AAAEAAMAAQABAD0AAAAFAAMAAQABAD0AAAAGAAMAAQABAD0
 tile_set = SubResource("TileSet_sgp6g")
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
+
+[node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
