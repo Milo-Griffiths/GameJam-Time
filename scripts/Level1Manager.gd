@@ -11,8 +11,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func loadnextlevel():
-	get_tree().change_scene_to_packed(level2)
+#func loadnextlevel():
+	#get_tree().change_scene_to_packed(level2)
+
+func loadnextlevel() -> void:
+	FadeTransition.change_to(level2)
 
 func loaddeath():
 	get_tree().change_scene_to_packed(death)
