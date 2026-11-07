@@ -6,27 +6,43 @@ var SPEED = 300.0
 var JUMP_VELOCITY = -400.0
 @export
 var startbackwards : bool
+@export
+var target_distance : float
+@export
+var path = "Level1"
 var dir = 1	
 
-var ray : RayCast2D
+var wallray : RayCast2D
+var playerray : RayCast2D
 var sprite : AnimatedSprite2D
 
 func _ready() -> void:
-	ray = $WallDetection
+	wallray = $WallDetection
+	playerray = $Playerdetection
 	sprite = $AnimatedSprite2D
-	sprite.play("walk")
 	if startbackwards:
 		flip()
 	
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if playerray.is_colliding():
+		print("ow")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	#target player
+	var player: CharacterBody2D = get_tree().get_root().get_node(path).get_node("player")
+	var target : float = (player.position- position).normalized().x
+
+	var distance = player.position.distance_to(position)
+	if distance < target_distance:
+		if target > 0 and dir == -1:
+			flip()
+		elif target < 0 and dir == 1:
+			flip()
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if ray.is_colliding():
+	if wallray.is_colliding():
 		flip()
 
 	if dir:
@@ -35,9 +51,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+
 func flip():
 	dir = dir *-1
-	ray.scale.x = ray.scale.x * -1
+	wallray.scale.x = wallray.scale.x * -1
 	if dir == -1:
 		sprite.flip_h = true
 	else:

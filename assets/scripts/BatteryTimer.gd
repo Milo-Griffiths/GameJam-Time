@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 	if (time > Initial_Time):
 		time = Initial_Time
 	elif (time <= 0):
-		pass
+		get_tree().change_scene_to_file("res://scenes/Death/Death.tscn")
 	$".".value = (time/Initial_Time)* 100;
