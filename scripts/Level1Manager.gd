@@ -2,7 +2,7 @@ extends Node2D
 var enemieskilled : int = 0
 var level2 = preload("res://scenes/levels/Level2.tscn")
 var death = preload("res://scenes/Death/Death.tscn")
-
+var objective_done = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -19,9 +19,7 @@ func loaddeath():
 
 func enemykilled():
 	enemieskilled += 1
-	if enemieskilled == 2:
+	if enemieskilled == 2 and objective_done:
 		loadnextlevel()
 
 
-func _on_rat_2_killed() -> void:
-	pass # Replace with function body.
