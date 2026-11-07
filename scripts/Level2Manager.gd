@@ -7,8 +7,11 @@ var objectivesdone = 0
 var total_objectives : int
 
 
-func loadnextlevel():
-	get_tree().change_scene_to_packed(level3)
+#func loadnextlevel():
+	#get_tree().change_scene_to_packed(level3)
+
+func loadnextlevel() -> void:
+	FadeTransition.change_to(level3)
 
 func loaddeath():
 	get_tree().change_scene_to_packed(death)
