@@ -2,6 +2,7 @@ extends CollisionShape2D
 var level1 = preload("res://scenes/levels/Level1.tscn")
 var inside = false
 var scene = ""
+signal sigout
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 		loadscene()
 
 func loadscene():
-	get_tree().change_scene_to_file(scene)
+	sigout.emit()
+	#get_tree().change_scene_to_file(scene)
 
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:

@@ -143,7 +143,7 @@ sources/1 = SubResource("TileSetAtlasSource_2basl")
 [node name="Level3" type="Node2D" unique_id=878828158]
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("1_53p26")]
-position = Vector2(153, -307)
+position = Vector2(31, 11)
 SPEED = 300.0
 JUMP_VELOCITY = -400.0
 
