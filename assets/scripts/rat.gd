@@ -8,7 +8,8 @@ var JUMP_VELOCITY = -400.0
 var startbackwards : bool
 @export
 var target_distance : float
-
+@export
+var path = "Level1"
 var dir = 1	
 
 var wallray : RayCast2D

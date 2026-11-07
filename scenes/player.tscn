@@ -9,12 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://chfficgimbvpn" path="res://assets/player/awful/IncredibleWalker3.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cgjyf8ump1jld" path="res://assets/player/awful/IncredibleWalker4.png" id="6_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dersmwx36twdx" path="res://assets/player/awful/Idle.png" id="7_ur7pv"]
-
-[ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
-
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://buqlquqstwaki" path="res://assets/gun.png" id="11_3v2ag"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_smehm")
@@ -285,6 +282,8 @@ animations = [{
 [node name="player" type="CharacterBody2D" unique_id=1097559639]
 collision_layer = 2
 script = ExtResource("1_g2els")
+SPEED = 400.0
+JUMP_VELOCITY = -500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
