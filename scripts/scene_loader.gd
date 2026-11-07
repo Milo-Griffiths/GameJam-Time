@@ -1,5 +1,5 @@
 extends Node2D
-var level1 = preload("res://Scenes/Levels/Level1.tscn").instantiate
+var level1 = preload("res://scenes/levels/Level1.tscn").instantiate
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
