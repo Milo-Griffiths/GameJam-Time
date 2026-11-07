@@ -9,12 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://chfficgimbvpn" path="res://assets/player/awful/IncredibleWalker3.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cgjyf8ump1jld" path="res://assets/player/awful/IncredibleWalker4.png" id="6_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dersmwx36twdx" path="res://assets/player/awful/Idle.png" id="7_ur7pv"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
-=======
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://buqlquqstwaki" path="res://assets/gun.png" id="11_3v2ag"]
->>>>>>> 2c5c2c1f57d332e3360d7024fb573e13d17a37cf
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_smehm")
@@ -253,7 +250,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1b08"]
-size = Vector2(9, 30)
+size = Vector2(10, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
 atlas = ExtResource("11_3v2ag")
@@ -285,6 +282,8 @@ animations = [{
 [node name="player" type="CharacterBody2D" unique_id=1097559639]
 collision_layer = 2
 script = ExtResource("1_g2els")
+SPEED = 400.0
+JUMP_VELOCITY = -500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
@@ -294,24 +293,21 @@ autoplay = "awful_idle"
 frame_progress = 0.7160638
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
-position = Vector2(0.5, 1)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t1b08")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980265435]
 
-<<<<<<< HEAD
 [node name="Player_UI" parent="Camera2D" unique_id=1594529095 instance=ExtResource("10_y4r1p")]
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, -300)
-=======
+
 [node name="gun" type="Node2D" parent="." unique_id=1199234887]
+position = Vector2(0, -2)
 script = ExtResource("10_d2wvv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gun" unique_id=255633166]
 texture_filter = 1
-position = Vector2(1, 2)
+position = Vector2(0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
 animation = &"new_animation"
-frame = 1
-frame_progress = 0.104779
->>>>>>> 2c5c2c1f57d332e3360d7024fb573e13d17a37cf
