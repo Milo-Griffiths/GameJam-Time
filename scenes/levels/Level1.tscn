@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8k1673xxvj4t" path="res://scripts/Level1Manager.gd" id="1_fh0io"]
 [ext_resource type="PackedScene" uid="uid://d2cqe4xbq701h" path="res://scenes/player.tscn" id="2_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cepnbm7s71wqk" path="res://scenes/Enemies/rat.tscn" id="3_x4si1"]
+[ext_resource type="PackedScene" uid="uid://crnbpy1uvjdxl" path="res://scenes/stasis.tscn" id="5_68ib6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4eolq"]
 
@@ -6907,6 +6908,10 @@ startbackwards = true
 
 [node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
 script = ExtResource("1_fh0io")
+
+[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("5_68ib6")]
+position = Vector2(1514, 25)
+scene = "Level3"
 
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]

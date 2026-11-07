@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://crnbpy1uvjdxl"]
+
+[ext_resource type="Script" uid="uid://calr5m88skrmq" path="res://scenes/stasis.gd" id="1_7r2ri"]
+[ext_resource type="Texture2D" uid="uid://rx6shysrh1ml" path="res://icon.svg" id="1_jcb4j"]
+[ext_resource type="Script" uid="uid://cfbny1qt2j8uk" path="res://scenes/stasisCollision.gd" id="2_if1ug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylny4"]
+
+[node name="stasis" type="Node2D" unique_id=293602661]
+script = ExtResource("1_7r2ri")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1376775889]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=844828763]
+shape = SubResource("CircleShape2D_ylny4")
+script = ExtResource("2_if1ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=957119534]
+position = Vector2(-0.5000019, 0.4999981)
+scale = Vector2(0.14843749, 0.1484375)
+texture = ExtResource("1_jcb4j")
+
+[connection signal="mysignal" from="." to="Area2D/CollisionShape2D" method="_on_stasis_mysignal"]
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_input_event"]
