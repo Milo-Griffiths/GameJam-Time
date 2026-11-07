@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://chfficgimbvpn" path="res://assets/player/awful/IncredibleWalker3.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cgjyf8ump1jld" path="res://assets/player/awful/IncredibleWalker4.png" id="6_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dersmwx36twdx" path="res://assets/player/awful/Idle.png" id="7_ur7pv"]
-<<<<<<< HEAD
+
 [ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
-=======
+
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://buqlquqstwaki" path="res://assets/gun.png" id="11_3v2ag"]
->>>>>>> 2c5c2c1f57d332e3360d7024fb573e13d17a37cf
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_smehm")
@@ -299,11 +299,10 @@ shape = SubResource("RectangleShape2D_t1b08")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980265435]
 
-<<<<<<< HEAD
 [node name="Player_UI" parent="Camera2D" unique_id=1594529095 instance=ExtResource("10_y4r1p")]
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, -300)
-=======
+
 [node name="gun" type="Node2D" parent="." unique_id=1199234887]
 script = ExtResource("10_d2wvv")
 
@@ -314,4 +313,3 @@ sprite_frames = SubResource("SpriteFrames_ohs4u")
 animation = &"new_animation"
 frame = 1
 frame_progress = 0.104779
->>>>>>> 2c5c2c1f57d332e3360d7024fb573e13d17a37cf
