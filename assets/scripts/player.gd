@@ -7,12 +7,14 @@ var SPEED = 300.0
 var JUMP_VELOCITY = -400.0
 
 var moving = false
+var canjump = true
 
 #interaction stuff
 var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
 var prompt  = null
 var Interactive_range = false
 var Interacted = null
+@export
 var push_speed = 600
 
 
@@ -29,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		canjump = true
 		
 
 	# Handle jump.
@@ -53,9 +57,9 @@ func _physics_process(delta: float) -> void:
 		moving = true
 	else:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
-	if not is_on_floor() and Input.is_action_just_pressed("shoot"):
-		var away := (global_position - get_global_mouse_position()).normalized()
-		velocity += away * push_speed
+	if not is_on_floor() and Input.is_action_just_pressed("shoot") and canjump:
+		velocity += opposite_dir * push_speed
+		canjump = false
 	
 	move_and_slide()
 	

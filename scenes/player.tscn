@@ -285,6 +285,7 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 SPEED = 400.0
 JUMP_VELOCITY = -500.0
+push_speed = 400
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
