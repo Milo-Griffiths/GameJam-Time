@@ -6902,6 +6902,7 @@ tile_set = SubResource("TileSet_sgp6g")
 position = Vector2(465, -45)
 startbackwards = true
 
-[node name="player2" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(1004.99994, 69)
-scale = Vector2(5, 5)
+[node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
+position = Vector2(1094, 64)
+SPEED = 300.0
+JUMP_VELOCITY = -400.0

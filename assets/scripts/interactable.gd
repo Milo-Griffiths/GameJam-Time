@@ -4,7 +4,7 @@ var interactable = false
 signal interactingdist
 signal non_interact
 const interactionDist = 32
-var player: CharacterBody2D =  $"../player".get_node("Player")
+var player: CharacterBody2D =  $"..".get_node("player")
 
 func _process(delta: float) -> void:
 	var deltaD  = (Vector2)($".".transform.position - player.Position)
