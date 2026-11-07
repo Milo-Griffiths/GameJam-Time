@@ -31,10 +31,10 @@ script = ExtResource("1_o6d1m")
 layer = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1411268182]
-offset_left = 829.0
-offset_top = 48.0
-offset_right = 1131.0
-offset_bottom = 198.0
+offset_left = 834.0
+offset_top = 10.0
+offset_right = 1136.0
+offset_bottom = 160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_o6d1m")
 script = ExtResource("1_ifi1l")
 
