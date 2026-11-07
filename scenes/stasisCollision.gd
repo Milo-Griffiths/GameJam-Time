@@ -26,5 +26,3 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	inside = true
 
 
-func _on_stasis_mysignal(sc: String) -> void:
-	scene = "res://scenes/levels/"+sc+".tscn"

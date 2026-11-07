@@ -1,12 +1,10 @@
 extends Node2D
 
-@export var scene = ""
 
-signal mysignal
 signal sceneSwitch
 
 func _ready() -> void:
-	mysignal.emit(scene)
+	pass
 
 
 
