@@ -26,16 +26,17 @@ position = Vector2(1024, 130)
 scale = Vector2(4, 4)
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(249, -15)
+position = Vector2(1018, 124)
 scale = Vector2(4, 4)
 hp = 100
 
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
+position = Vector2(-653, 87)
 JUMP_VELOCITY = -200.0
 jumpspeed = 40.0
 
 [node name="Rat2" parent="." unique_id=2127364585 instance=ExtResource("3_x4si1")]
-position = Vector2(465, -45)
+position = Vector2(773, -543)
 JUMP_VELOCITY = -200.0
 startbackwards = true
 jumpspeed = 40.0
