@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dsw5u2roqe50o" path="res://assets/scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bayb1tjucempf" path="res://assets/player/sams iteration/New Piskel (14).png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://d2s3l5fy88vfk" path="res://assets/player/sams iteration/New Piskel (12).png" id="2_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://bgguvxlta8hdx" path="res://assets/player/sams iteration/DamagedRobot.png" id="4_fjrip"]
 [ext_resource type="Texture2D" uid="uid://c7yudyglpnk8e" path="res://assets/player/sams iteration/New Piskel (13).png" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
@@ -25,6 +26,10 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_tuyoq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("4_fjrip")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
@@ -77,6 +82,14 @@ animations = [{
 "loop": 1,
 "name": &"awful_idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
+"loop": 0,
+"name": &"damage",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -156,7 +169,7 @@ push_speed = 300
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t1b08")
-animation = &"awful_idle"
+animation = &"damage"
 autoplay = "awful_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
