@@ -948,10 +948,6 @@ tile_set = SubResource("TileSet_c68tw")
 [node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("10_8qlrg")]
 text = "e"
 
-[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_g0tkw")]
-position = Vector2(1040, 127)
-scale = Vector2(4, 4)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1200496434]
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
@@ -964,16 +960,20 @@ scale = Vector2(4, 3.748)
 position = Vector2(1019, -1033)
 scale = Vector2(4, 4)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2049231819 groups=["Objectivenodes"]]
-position = Vector2(115, 59)
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1215760271 groups=["Objectivenodes"]]
+position = Vector2(64, 105)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("15_vjdto")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=904067933]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=670178589]
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_bqc3i")
 
-[connection signal="interactedwith" from="StaticBody2D" to="SceneLoader" method="interactedwith"]
-[connection signal="interactingdist" from="StaticBody2D" to="player" method="_on_static_body_2d_interactingdist"]
-[connection signal="non_interact" from="StaticBody2D" to="player" method="_on_static_body_2d_non_interact"]
+[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_g0tkw")]
+position = Vector2(1040, 127)
+scale = Vector2(4, 4)
+
+[connection signal="interactedwith" from="StaticBody2D2" to="SceneLoader" method="interactedwith"]
+[connection signal="interactingdist" from="StaticBody2D2" to="player" method="_on_static_body_2d_interactingdist"]
+[connection signal="non_interact" from="StaticBody2D2" to="player" method="_on_static_body_2d_non_interact"]
