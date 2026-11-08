@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cepnbm7s71wqk"]
 
 [ext_resource type="Script" uid="uid://dnuuo3hu65rb4" path="res://assets/scripts/rat.gd" id="1_cmn6w"]
-[ext_resource type="Texture2D" uid="uid://c3fmwwvf01fbe" path="res://assets/tile.png" id="2_cmn6w"]
+[ext_resource type="Texture2D" uid="uid://b7ykkqb4ob5og" path="res://assets/rat-deathexport.png" id="2_cmn6w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
 radius = 6.25
@@ -9,19 +9,23 @@ height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbrqp"]
 atlas = ExtResource("2_cmn6w")
-region = Rect2(0, 0, 12, 12)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw1pm"]
 atlas = ExtResource("2_cmn6w")
-region = Rect2(12, 0, 12, 12)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hcqy0"]
 atlas = ExtResource("2_cmn6w")
-region = Rect2(24, 0, 12, 12)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgauc"]
 atlas = ExtResource("2_cmn6w")
-region = Rect2(36, 0, 12, 12)
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8b5w"]
+atlas = ExtResource("2_cmn6w")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f8b5w"]
 load_path = "res://.godot/imported/rat.png-b418fcc6025aca75e39ec85bc3691ead.ctex"
@@ -60,10 +64,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgauc")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_f8b5w")
 }],
 "loop": 0,
 "name": &"Death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -106,6 +113,7 @@ shape = SubResource("CapsuleShape2D_pdxfl")
 texture_filter = 1
 position = Vector2(-2, -9.75)
 sprite_frames = SubResource("SpriteFrames_cmn6w")
+autoplay = "default"
 
 [node name="WallDetection" type="RayCast2D" parent="." unique_id=390985785]
 target_position = Vector2(15, 0)
