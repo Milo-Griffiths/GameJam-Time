@@ -947,7 +947,7 @@ tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAE
 text = "e"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1162808164 groups=["Objectivenodes"]]
-position = Vector2(-803, -598)
+position = Vector2(-2305, -1342)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("5_interactable")
@@ -956,6 +956,7 @@ script = ExtResource("5_interactable")
 shape = SubResource("RectangleShape2D_interaction")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=922661431]
+visible = false
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
