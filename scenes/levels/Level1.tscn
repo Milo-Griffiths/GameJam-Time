@@ -587,15 +587,6 @@ sources/0 = SubResource("TileSetAtlasSource_p5s5a")
 sources/1 = SubResource("TileSetAtlasSource_njy47")
 sources/2 = SubResource("TileSetAtlasSource_j7nyf")
 
-[sub_resource type="Gradient" id="Gradient_lha2r"]
-offsets = PackedFloat32Array(0.012048192, 0.20783132)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t1b08"]
-gradient = SubResource("Gradient_lha2r")
-fill = 1
-fill_from = Vector2(0.49565217, 0.5)
-
 [node name="Level1" type="Node2D" unique_id=1332319202]
 
 [node name="background" parent="." unique_id=2064431650 instance=ExtResource("1_68ib6")]
@@ -606,6 +597,7 @@ tile_map_data = PackedByteArray("AAD+/wMAAAAFAAAAAAAHAAMAAAAFAAAAAAD//wMAAAAFAAA
 tile_set = SubResource("TileSet_xbvxr")
 
 [node name="Objects-behind" parent="." unique_id=1369510057 instance=ExtResource("3_7d7pp")]
+z_index = 0
 tile_map_data = PackedByteArray("AADy//n/AQAGAAYAAADy//r/AQAGAAcAAAAMAAEAAQAAAAEAAAAMAAIAAQAAAAIAAAAKAAEAAQAAAAEAAAAKAAIAAQAAAAIAAAAHAAEAAQAAAAEAAAAHAAIAAQAAAAIAAAAQAPf/AQADAAcAAAARAPf/AQAEAAcAAAAPAPf/AQABAAIAAAASAPf/AQABAAEAAAALAPX/AQACAAIAAAAGAP3/AQABAAUAAAAHAP3/AQACAAUAAAAIAP3/AQACAAUAAAAJAP3/AQACAAUAAAAKAP3/AQADAAUAAAAQAPT/AQAFAAUAAAAMAPb/AQAHAAYAAAAMAPf/AQAHAAcAAAABAPX/AQACAAYAAAARAPb/AQAEAAYAAAAEAPb/AQAAAAMAAAAFAPb/AQAAAAUAAAD9//b/AQACAAMAAADg//f/AQAFAAEAAADg//b/AQAFAAAAAADf//f/AQAFAAEAAADf//b/AQAFAAAAAADw//f/AQAAAAcAAADw//b/AQAAAAYAAADu//b/AQABAAYAAAAHAPb/AQABAAYAAADn//f/AQAAAAAAAADo//f/AQABAAAAAAAPAPb/AgAIAAEAAAAQAPb/AgAJAAEAAAAPAPX/AgAIAAAAAAAQAPX/AgAJAAAAAADt//H/AQACAAQAAADm//H/AQAAAAMAAADn//H/AQABAAQAAAAKAPH/AQAAAAUAAAAJAPH/AQAAAAMAAADy//H/AQABAAYAAADe//H/AQAAAAcAAADe//D/AQAAAAYAAAD+//D/AQACAAIAAAADAPL/AQACAAAAAAAEAPL/AQADAAAAAAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAAHAPL/AQACAAAAAAAIAPL/AQADAAAAAAASAPL/AQACAAAAAAATAPL/AQADAAAAAAAQAPL/AQAAAAAAAAARAPL/AQABAAAAAADa//H/AQAFAAMAAADa//L/AQAFAAQAAAAAAPH/AQAHAAQAAAAAAPL/AQAHAAUAAAACAPT/AQABAAUAAAADAPT/AQACAAUAAAAEAPT/AQACAAUAAAAFAPT/AQACAAUAAAAGAPT/AQACAAUAAAAHAPT/AQACAAUAAAAIAPT/AQADAAUAAADa//T/AQABAAUAAADb//T/AQACAAUAAADc//T/AQADAAUAAADf//T/AQABAAUAAADg//T/AQACAAUAAADh//T/AQADAAUAAADv//T/AQABAAUAAADw//T/AQACAAUAAADx//T/AQACAAUAAADy//T/AQACAAUAAADz//T/AQACAAUAAAD0//T/AQACAAUAAAD1//T/AQACAAUAAAD2//T/AQADAAUAAADh//H/AQACAAQAAAACAPD/AQADAAIAAAADAPD/AQAEAAIAAAAEAPD/AQAFAAIAAAAOAPH/AQABAAYAAAAMAPH/AQAAAAYAAAAMAPL/AQAAAAcAAAAJAPL/AQABAAEAAAAPAPL/AQABAAIAAADb/+r/AQAGAAAAAADb/+v/AQAGAAEAAADc/+r/AQAGAAAAAADc/+v/AQAGAAEAAAD8/+r/AQAAAAMAAAD9/+r/AQABAAMAAADo/+r/AQABAAYAAADq/+r/AQAAAAYAAADq/+v/AQAAAAcAAAD4/+v/AQADAAMAAADf/+v/AQADAAMAAADy/+z/AQAAAAAAAADz/+z/AQABAAAAAADe/+7/AQABAAUAAADf/+7/AQACAAUAAADg/+7/AQACAAUAAADh/+7/AQACAAUAAADi/+7/AQACAAUAAADj/+7/AQACAAUAAADk/+7/AQACAAUAAADl/+7/AQACAAUAAADm/+7/AQADAAUAAAD6/+7/AQABAAUAAAD7/+7/AQACAAUAAAD8/+7/AQADAAUAAADy/+X/AQACAAQAAAD9/+X/AQAAAAQAAAD8/+X/AQAAAAMAAADi/+X/AQAAAAMAAADj/+X/AQAAAAQAAADn/+X/AQAAAAYAAADn/+b/AQAAAAcAAADp/+X/AQABAAYAAADc/+T/AQACAAYAAAAIAO//AQACAAYAAADs/+X/AQAFAAMAAADs/+b/AQAFAAQAAADt/+X/AQAFAAMAAADt/+b/AQAFAAQAAAA=")
 
 [node name="stasis" parent="." unique_id=293602661 instance=ExtResource("5_68ib6")]
@@ -613,42 +605,45 @@ position = Vector2(1024, 130)
 scale = Vector2(4, 4)
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(249, -15)
+position = Vector2(1018, 124)
 scale = Vector2(4, 4)
 hp = 100
 
-[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=815845197]
-position = Vector2(0.24999928, -8.181875)
-scale = Vector2(2.9017851, 1.7045201)
-color = Color(0.21900001, 0.73, 0.23603334, 1)
-energy = 0.74
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_color = Color(0.003921569, 0, 0.019607844, 0.48235294)
-texture = SubResource("GradientTexture2D_t1b08")
-texture_scale = 4.0
-
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
+position = Vector2(-653, 87)
 JUMP_VELOCITY = -200.0
 jumpspeed = 40.0
 
 [node name="Rat2" parent="." unique_id=2127364585 instance=ExtResource("3_x4si1")]
-position = Vector2(465, -45)
+position = Vector2(773, -543)
 JUMP_VELOCITY = -200.0
 startbackwards = true
 jumpspeed = 40.0
 
 [node name="Objects-infront" parent="." unique_id=988419828 instance=ExtResource("7_e5nfq")]
-tile_map_data = PackedByteArray()
+tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAEAAAD7//L/AQAEAAAAAAD8//L/AQAEAAEAAAD5//L/AQABAAIAAAA=")
 
 [node name="SceneLoader" type="Node2D" parent="." unique_id=2142079014]
 script = ExtResource("1_fh0io")
+total_objectives = 5
+
+[node name="Rat3" parent="." unique_id=280598135 instance=ExtResource("3_x4si1")]
+position = Vector2(869, -904)
+
+[node name="Rat4" parent="." unique_id=1153267802 instance=ExtResource("3_x4si1")]
+position = Vector2(-1157, -1320)
+
+[node name="Rat5" parent="." unique_id=1866622043 instance=ExtResource("3_x4si1")]
+position = Vector2(-2100, -1673)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2039685481]
 light_mask = 2
-color = Color(0.80261624, 0.80261624, 0.8026162, 1)
+color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
 [connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]
+[connection signal="killed" from="Rat3" to="SceneLoader" method="enemykilled"]
+[connection signal="killed" from="Rat4" to="SceneLoader" method="enemykilled"]
+[connection signal="killed" from="Rat5" to="SceneLoader" method="enemykilled"]

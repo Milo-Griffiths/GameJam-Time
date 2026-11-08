@@ -2,8 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dmahjb457dsuw" path="res://assets/scripts/BatteryTimer.gd" id="1_lwipk"]
 [ext_resource type="PackedScene" uid="uid://ck4w6t8ko18lw" path="res://scenes/UI/objective_ui.tscn" id="2_50a1s"]
+[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="2_q3y81"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5m0x8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_50a1s"]
+font = ExtResource("2_q3y81")
+font_size = 70
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Player_UI" type="Control" unique_id=1594529095]
 layout_mode = 3
@@ -14,23 +21,31 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=367329032]
-modulate = Color(0, 0.9221238, 0.93135834, 1)
+visibility_layer = 7
+z_index = 3
 material = SubResource("CanvasItemMaterial_5m0x8")
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -573.0
-offset_top = 34.0
-offset_right = -484.0
-offset_bottom = 61.0
-grow_horizontal = 2
+layout_mode = 0
+offset_left = 233.0
+offset_top = 17.0
+offset_right = 596.0
+offset_bottom = 97.0
 show_percentage = false
 script = ExtResource("1_lwipk")
 
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1472858223]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 360.0
+offset_bottom = 52.0
+text = "1500"
+label_settings = SubResource("LabelSettings_50a1s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="objective_ui" parent="." unique_id=905169599 instance=ExtResource("2_50a1s")]
 layout_mode = 1
-offset_left = 239.0
-offset_top = 6.0
-offset_right = 239.0
-offset_bottom = 6.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
