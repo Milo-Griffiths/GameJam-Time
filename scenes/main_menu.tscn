@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://cptriun5byqba"]
 
 [ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://1tso8ch4pc66" path="res://assets/Background2.png" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://bdchbu5l4rnie" path="res://assets/scripts/scene_loader.gd" id="2_ekxnf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpue2"]
+texture = ExtResource("1_bqqt6")
+modulate_color = Color(0.31764707, 0.31764707, 0.31764707, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dch4e"]
 bg_color = Color(1, 1, 1, 1)
@@ -55,6 +60,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=457737096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jpue2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=241798514]
 layout_mode = 1

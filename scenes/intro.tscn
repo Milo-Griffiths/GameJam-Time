@@ -2,6 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="1_ioskq"]
 [ext_resource type="Script" uid="uid://c2yiwh42aq0me" path="res://assets/scripts/intro.gd" id="1_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://b07kdv8qb3sd3" path="res://assets/Background.png" id="2_4bx60"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dch4e"]
+texture = ExtResource("2_4bx60")
+modulate_color = Color(0.31764707, 0.31764707, 0.31764707, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bx60"]
 bg_color = Color(1, 1, 1, 1)
@@ -38,6 +43,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yjqpq")
+
+[node name="Panel" type="Panel" parent="." unique_id=1601572159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dch4e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=997681452]
 layout_mode = 1
