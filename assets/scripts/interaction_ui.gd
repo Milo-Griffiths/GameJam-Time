@@ -3,13 +3,15 @@ extends Control
 
 @onready var interaction_prompt: PanelContainer = $CanvasLayer/InteractionPrompt
 @onready var prompt_text: Label = $CanvasLayer/InteractionPrompt/MarginContainer/VBoxContainer/PromptText
+@export
+var text : String
 
 var popup_base_y := 0.0
 var float_time := 0.0
 
 func _ready() -> void:
 	add_to_group("interaction_ui")
-	prompt_text.text = "E"
+	prompt_text.text = text
 	interaction_prompt.hide()
 	popup_base_y = interaction_prompt.position.y
 
