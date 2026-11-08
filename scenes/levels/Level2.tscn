@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b4d37ioaqtv6y" path="res://scenes/UI/interaction_ui.tscn" id="6_interaction_ui"]
 [ext_resource type="PackedScene" uid="uid://c7t04kihoudya" path="res://scenes/levels/TileMap/objects_infront.tscn" id="8_dwyyt"]
 [ext_resource type="PackedScene" uid="uid://c7t18ij718wn0" path="res://scenes/Enemies/rat2.tscn" id="14_6rin4"]
+[ext_resource type="PackedScene" uid="uid://bbk7nismj2hj5" path="res://scenes/Enemies/Mutantrat.tscn" id="15_5v643"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kypp1"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -969,6 +970,11 @@ path = "Level2"
 [node name="Rat2" parent="." unique_id=902151297 instance=ExtResource("14_6rin4")]
 position = Vector2(762, -1303)
 startbackwards = true
+path = "Level2"
+
+[node name="Rat3" parent="." unique_id=1293097158 instance=ExtResource("15_5v643")]
+position = Vector2(608, -575)
+target_distance = 600.0
 path = "Level2"
 
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]

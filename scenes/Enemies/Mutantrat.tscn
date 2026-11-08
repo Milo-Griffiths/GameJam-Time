@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dnuuo3hu65rb4" path="res://assets/scripts/rat.gd" id="1_cmn6w"]
 [ext_resource type="Texture2D" uid="uid://b7ykkqb4ob5og" path="res://assets/rat-deathexport.png" id="2_cmn6w"]
-[ext_resource type="Texture2D" uid="uid://ch7utr3rbacfg" path="res://assets/rat.png" id="3_jekt7"]
+[ext_resource type="Texture2D" uid="uid://bsavilf6h43f3" path="res://assets/enemies/MutantRat.png" id="3_7okad"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
-radius = 6.25
-height = 24.0
+radius = 12.0
+height = 33.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbrqp"]
 atlas = ExtResource("2_cmn6w")
@@ -28,24 +28,24 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("2_cmn6w")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dn4mm"]
-atlas = ExtResource("3_jekt7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyr4e"]
+atlas = ExtResource("3_7okad")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_05m0u"]
-atlas = ExtResource("3_jekt7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg2vl"]
+atlas = ExtResource("3_7okad")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nw1id"]
-atlas = ExtResource("3_jekt7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulgqu"]
+atlas = ExtResource("3_7okad")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c47j2"]
-atlas = ExtResource("3_jekt7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k5oj"]
+atlas = ExtResource("3_7okad")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_scjoy"]
-atlas = ExtResource("3_jekt7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqyl7"]
+atlas = ExtResource("3_7okad")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cmn6w"]
@@ -72,19 +72,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dn4mm")
+"texture": SubResource("AtlasTexture_lyr4e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_05m0u")
+"texture": SubResource("AtlasTexture_eg2vl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nw1id")
+"texture": SubResource("AtlasTexture_ulgqu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c47j2")
+"texture": SubResource("AtlasTexture_1k5oj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_scjoy")
+"texture": SubResource("AtlasTexture_iqyl7")
 }],
 "loop": 1,
 "name": &"default",
@@ -109,24 +109,22 @@ shape = SubResource("CapsuleShape2D_pdxfl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380315492]
 texture_filter = 1
-position = Vector2(-2, -9.75)
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_cmn6w")
 autoplay = "default"
 
 [node name="WallDetection" type="RayCast2D" parent="." unique_id=390985785]
-target_position = Vector2(15, 0)
+target_position = Vector2(22.75, 0)
 collision_mask = 13
 
 [node name="Playerdetection" type="RayCast2D" parent="." unique_id=773509831]
-visible = false
-target_position = Vector2(15, 0)
+target_position = Vector2(21.5, 0.25)
 collision_mask = 2
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=1446588431]
-visible = false
-position = Vector2(-7, 0)
+position = Vector2(-8.25, 0)
 shape = SubResource("CircleShape2D_pdxfl")
-target_position = Vector2(16, 0)
+target_position = Vector2(17.75, 0)
 collision_mask = 8
 
 [node name="CliffDetection" type="RayCast2D" parent="." unique_id=1843605035]
