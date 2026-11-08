@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bya7k331xkq7j"]
+
+[ext_resource type="Script" uid="uid://ris75ubtqgnj" path="res://assets/scripts/game_end.gd" id="1_yljkt"]
+[ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="2_5rddw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shr4g"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1f2c"]
+bg_color = Color(0.63529414, 0.63529414, 0.63529414, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf13r"]
+bg_color = Color(0.8235294, 0.8235294, 0.8235294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="GameEnd" type="Control" unique_id=1580057466]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yljkt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1020378157]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0.105882354, 0.105882354, 0.105882354, 0.72156864)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=120271844]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="YouWin" type="Label" parent="." unique_id=1051010622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -294.0
+offset_right = 225.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65882355, 0.89411765, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_5rddw")
+theme_override_font_sizes/font_size = 120
+text = "You win!"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="." unique_id=474637531]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 432.0
+offset_right = 695.0
+offset_bottom = 569.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_shr4g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s1f2c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tf13r")
+text = "Restart"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1013561481]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -144.0
+offset_right = 339.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_5rddw")
+theme_override_font_sizes/normal_font_size = 60
+text = "You saved the humans from the supercancer!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
