@@ -1,6 +1,6 @@
 extends Label
 
-var Initial_Time = 900
+var Initial_Time = 300
 var time = 180
 var timepasses : bool
 
