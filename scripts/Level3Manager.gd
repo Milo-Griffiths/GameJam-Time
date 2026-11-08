@@ -5,7 +5,7 @@ var objective_complete = false
 var objectivesdone = 0	
 @export
 var total_objectives : int
-var Objectivemessage : String = "Collect "
+var Objectivemessage : String = "Collect 1 item"
 var test : bool = true 
 
 func loaddeath():
