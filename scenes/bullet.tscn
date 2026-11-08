@@ -22,6 +22,7 @@ fill_from = Vector2(0.49565217, 0.5)
 collision_layer = 8
 collision_mask = 13
 physics_material_override = SubResource("PhysicsMaterial_x4si1")
+gravity_scale = 0.0
 script = ExtResource("1_y25gk")
 speed = 40
 
