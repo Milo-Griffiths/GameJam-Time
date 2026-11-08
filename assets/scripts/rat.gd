@@ -12,6 +12,8 @@ var target_distance : float
 var path = "Level1"
 @export
 var jumpspeed : float
+@export
+var hp : int = 3
 var dir = 1	
 
 signal killed
@@ -33,11 +35,11 @@ func _ready() -> void:
 		flip()
 	
 func _process(_delta: float) -> void:
-	if playerray.is_colliding():
-		print("ow")
 	if bulletdetection.is_colliding():
-		killed.emit()
-		queue_free()
+		hp = hp -1
+		if hp == 0:
+			killed.emit()
+			queue_free()
 
 
 func _physics_process(delta: float) -> void:

@@ -97,7 +97,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1b08"]
-size = Vector2(11.878958, 30)
+size = Vector2(11.878958, 29.01989)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
 atlas = ExtResource("6_fjrip")
@@ -133,6 +133,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5m7"]
+size = Vector2(17.102423, 29.849655)
+
 [node name="player" type="CharacterBody2D" unique_id=1097559639]
 scale = Vector2(5.61324, 5.2596927)
 collision_layer = 2
@@ -148,7 +151,7 @@ animation = &"awful_idle"
 autoplay = "awful_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490317715]
-position = Vector2(0.06052116, 1)
+position = Vector2(0.06052116, 0.5099449)
 shape = SubResource("RectangleShape2D_t1b08")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980265435]
@@ -170,3 +173,14 @@ frame_progress = 0.71388364
 
 [node name="Node2D" type="Node2D" parent="gun" unique_id=1469280456]
 position = Vector2(14.43017, -0.57774687)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=937890994]
+position = Vector2(-0.26722568, -4.0796442e-07)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1122351336]
+position = Vector2(-0.2672248, 0.095062636)
+shape = SubResource("RectangleShape2D_ca5m7")
+
+[connection signal="shot" from="gun" to="." method="_on_gun_shot"]

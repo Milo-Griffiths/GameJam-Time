@@ -1,12 +1,16 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hit_box : Area2D = $HitBox
 @export
 var SPEED = 300.0
 @export
 var JUMP_VELOCITY = -400.0
+@export
+var hp : int = 10000
 
 var moving = false
 var canjump = true
+signal died
 
 #interaction stuff
 #var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
@@ -16,11 +20,20 @@ var Interactive_range = false
 var Interacted = null
 @export
 var push_speed = 900
-
+var iframes = 0
 
 
 @export var ACCEL_GROUND: float = 2000.0
 @export var ACCEL_AIR: float = 500.0
+func _process(delta: float) -> void:
+	if hit_box.has_overlapping_bodies() and iframes <= 0:
+		print("damage")
+		hp = hp -10
+		iframes = 5
+	if iframes > 0:
+		iframes = iframes - delta * 10
+	if hp <= 0:
+		died.emit()
 
 
 func _physics_process(delta: float) -> void:	
@@ -59,9 +72,6 @@ func _physics_process(delta: float) -> void:
 		moving = true
 	else:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
-	if not is_on_floor() and Input.is_action_just_pressed("shoot") and canjump:
-		velocity += opposite_dir * push_speed
-		canjump = false
 	
 	move_and_slide()
 	
@@ -83,3 +93,11 @@ func _on_static_body_2d_non_interact() -> void:
 
 	if ui != null:
 		ui.hide_prompt()
+
+
+func _on_gun_shot() -> void:
+	var opposite_dir: Vector2 = -((get_global_mouse_position() - global_position).normalized())
+	if not is_on_floor() and  canjump:
+		velocity += opposite_dir * push_speed
+		canjump = false
+	

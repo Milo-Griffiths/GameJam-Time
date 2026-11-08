@@ -27,6 +27,7 @@ scale = Vector2(4, 4)
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
 position = Vector2(249, -15)
 scale = Vector2(4, 4)
+hp = 100
 
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
 JUMP_VELOCITY = -200.0
@@ -45,5 +46,6 @@ tile_map_data = PackedByteArray()
 script = ExtResource("1_fh0io")
 
 [connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
+[connection signal="died" from="player" to="SceneLoader" method="loaddeath"]
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat2" to="SceneLoader" method="enemykilled"]
