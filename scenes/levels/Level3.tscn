@@ -1032,15 +1032,15 @@ position = Vector2(726, -884)
 path = "Level3"
 
 [node name="Rat4" parent="." unique_id=1978294224 instance=ExtResource("16_bqc3i")]
-position = Vector2(328, -1000)
+position = Vector2(-1236, -606)
 path = "Level3"
 
 [node name="Rat5" parent="." unique_id=185690290 instance=ExtResource("16_bqc3i")]
-position = Vector2(907, -882)
+position = Vector2(-542, -874)
 path = "Level3"
 
 [node name="Rat6" parent="." unique_id=430751833 instance=ExtResource("16_bqc3i")]
-position = Vector2(161, -1140)
+position = Vector2(-710, -1326)
 path = "Level3"
 
 [connection signal="interactedwith" from="StaticBody2D2" to="SceneLoader" method="interactedwith"]
