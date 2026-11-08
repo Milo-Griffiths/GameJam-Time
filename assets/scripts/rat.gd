@@ -39,6 +39,8 @@ func _process(_delta: float) -> void:
 		hp = hp -1
 		if hp == 0:
 			killed.emit()
+			sprite.play("Death")
+			await sprite.animation_finished
 			queue_free()
 
 

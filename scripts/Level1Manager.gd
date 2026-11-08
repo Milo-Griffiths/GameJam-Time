@@ -8,7 +8,7 @@ signal objectivesdone
 func _ready() -> void:
 	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = "Kill the rats (0/2)"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 #func loadnextlevel():

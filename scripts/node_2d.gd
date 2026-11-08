@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("shoot") and attackcooldown <= 0:
+	if Input.is_action_pressed("shoot") and attackcooldown <= 0:
 		shoot()
 		shot.emit()
 		attackcooldown = 10
