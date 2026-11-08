@@ -22,6 +22,7 @@ FadeTransition="*uid://cyoqw7xommkp5"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

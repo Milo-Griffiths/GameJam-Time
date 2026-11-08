@@ -1047,6 +1047,7 @@ path = "Level3"
 position = Vector2(-710, -1326)
 path = "Level3"
 
+[connection signal="died" from="player" to="SceneLoader" method="loadGameEnd"]
 [connection signal="interactedwith" from="StaticBody2D2" to="SceneLoader" method="interactedwith"]
 [connection signal="interactingdist" from="StaticBody2D2" to="player" method="_on_static_body_2d_interactingdist"]
 [connection signal="non_interact" from="StaticBody2D2" to="player" method="_on_static_body_2d_non_interact"]
