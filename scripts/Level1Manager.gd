@@ -3,13 +3,13 @@ var enemieskilled : int = 0
 var level2 = preload("res://scenes/levels/Level2.tscn")
 var death = preload("res://scenes/Death/Death.tscn")
 var objective_done = false
-
+var Objectivemessage : String = "Kill the rats"
 @export
 var total_objectives : int
 signal objectivesdone
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = "Kill the rats (0/2)"
+	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = Objectivemessage + " (" + str(enemieskilled) + "/"+ str(total_objectives) + ")"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -25,9 +25,8 @@ func loaddeath():
 
 func enemykilled():
 	enemieskilled += 1
-	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = "Kill the rats (1/2)"  
+	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = Objectivemessage + " (" + str(enemieskilled) + "/"+ str(total_objectives) + ")"
 	if enemieskilled == total_objectives:
-		$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = "Kill the rats (2/2)"  
 		objective_done = true
 		objectivesdone.emit()
 
