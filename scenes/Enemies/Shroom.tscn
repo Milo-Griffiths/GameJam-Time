@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5r1hd7mpip1w"]
 
 [ext_resource type="Texture2D" uid="uid://ddmln1d2d7ye2" path="res://assets/enemies/SporeBossMain.png" id="1_bkbdi"]
+[ext_resource type="Texture2D" uid="uid://b3fpntixnayuy" path="res://assets/enemies/SporeBossMainArms.png" id="2_kg4ta"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6io4"]
 radius = 6.25
@@ -58,8 +59,15 @@ shape = SubResource("CapsuleShape2D_n6io4")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pdxfl")
 animation = &"new_animation"
-frame_progress = 0.16169757
+frame_progress = 0.36157233
 
 [node name="Gun" type="Node2D" parent="." unique_id=216455826]
 
 [node name="point" type="Node2D" parent="Gun" unique_id=1737752422]
+
+[node name="arms" type="Node2D" parent="." unique_id=617661265]
+
+[node name="Sprite2D" type="Sprite2D" parent="arms" unique_id=1738979898]
+texture_filter = 1
+position = Vector2(-1, -32)
+texture = ExtResource("2_kg4ta")
