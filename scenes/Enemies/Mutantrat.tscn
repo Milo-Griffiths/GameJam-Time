@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://bbk7nismj2hj5"]
 
 [ext_resource type="Script" uid="uid://dnuuo3hu65rb4" path="res://assets/scripts/rat.gd" id="1_cmn6w"]
-[ext_resource type="Texture2D" uid="uid://b7ykkqb4ob5og" path="res://assets/rat-deathexport.png" id="2_cmn6w"]
+[ext_resource type="Texture2D" uid="uid://cc63hejumdsnq" path="res://assets/enemies/MutantRatDeath.png" id="2_7okad"]
 [ext_resource type="Texture2D" uid="uid://bsavilf6h43f3" path="res://assets/enemies/MutantRat.png" id="3_7okad"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
 radius = 11.0
 height = 33.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbrqp"]
-atlas = ExtResource("2_cmn6w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_l23qw"]
+atlas = ExtResource("2_7okad")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gw1pm"]
-atlas = ExtResource("2_cmn6w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4veiv"]
+atlas = ExtResource("2_7okad")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hcqy0"]
-atlas = ExtResource("2_cmn6w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywedw"]
+atlas = ExtResource("2_7okad")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgauc"]
-atlas = ExtResource("2_cmn6w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecetb"]
+atlas = ExtResource("2_7okad")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f8b5w"]
-atlas = ExtResource("2_cmn6w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rnna"]
+atlas = ExtResource("2_7okad")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyr4e"]
@@ -52,23 +52,23 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sbrqp")
+"texture": SubResource("AtlasTexture_l23qw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gw1pm")
+"texture": SubResource("AtlasTexture_4veiv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hcqy0")
+"texture": SubResource("AtlasTexture_ywedw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lgauc")
+"texture": SubResource("AtlasTexture_ecetb")
 }, {
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_f8b5w")
+"duration": 9.0,
+"texture": SubResource("AtlasTexture_8rnna")
 }],
 "loop": 0,
 "name": &"Death",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -112,6 +112,7 @@ shape = SubResource("CapsuleShape2D_pdxfl")
 texture_filter = 1
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_cmn6w")
+animation = &"Death"
 autoplay = "default"
 
 [node name="WallDetection" type="RayCast2D" parent="." unique_id=390985785]
