@@ -223,6 +223,7 @@ texture = SubResource("GradientTexture2D_tuyoq")
 texture_scale = 4.0
 
 [node name="arrow" type="Sprite2D" parent="." unique_id=209012290]
+visible = false
 texture_filter = 1
 position = Vector2(-0.42334747, 0)
 rotation = -6.2831855

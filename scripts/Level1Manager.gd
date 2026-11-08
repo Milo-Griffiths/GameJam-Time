@@ -26,11 +26,7 @@ func _process(_delta: float) -> void:
 func loadnextlevel() -> void:
 	FadeTransition.change_to(level2, "20 years later...")
 
-<<<<<<< HEAD
-func loaddeath():
-=======
 func loaddeath() -> void:
->>>>>>> refs/remotes/origin/main
 	get_tree().change_scene_to_packed(death)
 
 func enemykilled():
