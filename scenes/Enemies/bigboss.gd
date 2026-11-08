@@ -1,25 +1,46 @@
-extends CharacterBody2D
+extends StaticBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var bulletdetection : ShapeCast2D
+signal killed
+var sprite : AnimatedSprite2D
+var playerdetect : CollisionShape2D
+
+@export
+var path = "Level1"
+@export
+var jumpspeed : float
+@export
+var hp : int = 50
+func _ready() -> void:
+	bulletdetection = $ShapeCast2D
+	sprite = $AnimatedSprite2D
+
+func _process(_delta: float) -> void:
+	if bulletdetection.is_colliding():
+		hp = hp -1
+		if hp <= 0:
+			killed.emit()
+			sprite.play("Death")
+			set_physics_process(false)
+			set_process(false)
+			await sprite.animation_finished
+			queue_free()
+		else:
+			flash_red()
+
+func flash_red() -> void:
+	var tween := create_tween()
+	sprite.modulate = Color(1, 0.2, 0.2)
+	tween.tween_property(sprite, "modulate", Color.WHITE, 0.15)
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+	
+	
+
+	
+
+	

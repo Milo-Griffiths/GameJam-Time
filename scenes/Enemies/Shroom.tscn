@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddmln1d2d7ye2" path="res://assets/enemies/SporeBossMain.png" id="1_bkbdi"]
 [ext_resource type="Script" uid="uid://bh5nucfo4xywb" path="res://scenes/Enemies/bigboss.gd" id="1_whnba"]
 [ext_resource type="Texture2D" uid="uid://b3fpntixnayuy" path="res://assets/enemies/SporeBossMainArms.png" id="2_kg4ta"]
+[ext_resource type="Script" uid="uid://cm3lyysc4snuc" path="res://scenes/Enemies/arms.gd" id="3_3syok"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
 radius = 31.83
@@ -57,7 +58,8 @@ animations = [{
 radius = 6.0
 height = 52.0
 
-[node name="Shroom" type="CharacterBody2D" unique_id=958410507]
+[node name="Shroom" type="StaticBody2D" unique_id=1169230267]
+position = Vector2(143, 117)
 script = ExtResource("1_whnba")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=103649031]
@@ -68,7 +70,6 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291169072]
 position = Vector2(0, -1)
-rotation = -6.2831855
 shape = SubResource("CapsuleShape2D_n6io4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995578220]
@@ -82,6 +83,7 @@ frame_progress = 0.36157233
 [node name="point" type="Node2D" parent="Gun" unique_id=1737752422]
 
 [node name="arms" type="Node2D" parent="." unique_id=617661265]
+script = ExtResource("3_3syok")
 
 [node name="Sprite2D" type="Sprite2D" parent="arms" unique_id=1738979898]
 texture_filter = 1

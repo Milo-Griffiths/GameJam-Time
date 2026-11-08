@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends StaticBody2D
 
 @export
 var SPEED = 300.0

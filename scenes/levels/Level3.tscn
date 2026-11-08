@@ -953,8 +953,8 @@ light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("1_53p26")]
-position = Vector2(410, 112)
+position = Vector2(314, -1307)
 
 [node name="Shroom" parent="." unique_id=958410507 instance=ExtResource("15_cw4sw")]
-position = Vector2(1036, -1036)
+position = Vector2(991, -1503)
 scale = Vector2(4, 4)

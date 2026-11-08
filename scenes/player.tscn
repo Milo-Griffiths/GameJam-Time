@@ -161,7 +161,6 @@ fill = 1
 fill_from = Vector2(0.49565217, 0.5)
 
 [node name="player" type="CharacterBody2D" unique_id=1097559639]
-visible = false
 scale = Vector2(5.61324, 5.2596927)
 collision_layer = 2
 script = ExtResource("1_g2els")
