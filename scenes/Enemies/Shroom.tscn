@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://c5r1hd7mpip1w"]
 
 [ext_resource type="Texture2D" uid="uid://ddmln1d2d7ye2" path="res://assets/enemies/SporeBossMain.png" id="1_bkbdi"]
+[ext_resource type="Script" uid="uid://bh5nucfo4xywb" path="res://scenes/Enemies/bigboss.gd" id="1_whnba"]
 [ext_resource type="Texture2D" uid="uid://b3fpntixnayuy" path="res://assets/enemies/SporeBossMainArms.png" id="2_kg4ta"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdxfl"]
+radius = 31.83
+height = 71.59
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6io4"]
-radius = 6.25
-height = 24.0
+radius = 38.01
+height = 115.7
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kg4ta"]
 atlas = ExtResource("1_bkbdi")
@@ -48,11 +53,22 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ca5m7"]
+radius = 6.0
+height = 52.0
+
 [node name="Shroom" type="CharacterBody2D" unique_id=958410507]
+script = ExtResource("1_whnba")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=103649031]
+visible = false
+position = Vector2(0, -19)
+shape = SubResource("CapsuleShape2D_pdxfl")
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291169072]
-position = Vector2(-0.25, 0)
-rotation = 1.5707964
+position = Vector2(0, -1)
+rotation = -6.2831855
 shape = SubResource("CapsuleShape2D_n6io4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995578220]
@@ -71,3 +87,15 @@ frame_progress = 0.36157233
 texture_filter = 1
 position = Vector2(-1, -32)
 texture = ExtResource("2_kg4ta")
+
+[node name="Area2D" type="Area2D" parent="arms" unique_id=2143924684]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arms/Area2D" unique_id=197828425]
+position = Vector2(-52, -17)
+shape = SubResource("CapsuleShape2D_ca5m7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="arms/Area2D" unique_id=2021055881]
+position = Vector2(50, -16)
+shape = SubResource("CapsuleShape2D_ca5m7")
