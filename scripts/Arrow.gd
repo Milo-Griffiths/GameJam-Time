@@ -9,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	objectives = get_tree().get_nodes_in_group("Objectivenodes")
-	for i in range(0,objectives.size()):
+	closest = objectives[0].global_position
+	for i in range(1,objectives.size()):
 		var current = objectives[i].global_position
 		var center = get_parent().global_position
 		

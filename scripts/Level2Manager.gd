@@ -44,3 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if test and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_T:
 			loadnextlevel()
+
+
+func flower_picked() -> void:
+	pass # Replace with function body.
