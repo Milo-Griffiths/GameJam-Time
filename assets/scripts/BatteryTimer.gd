@@ -18,3 +18,10 @@ func _process(delta: float) -> void:
 	var mins : int = time / 60
 	var sec : int = int(time) % 60
 	text = str(mins) +":"+ str(sec)
+
+
+
+
+
+func _on_player_ui_hit() -> void:
+	pass # Replace with function body.

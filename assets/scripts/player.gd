@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box : Area2D = $HitBox
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
-@onready var walk_sound: AudioStreamPlayer2D = $WalkSound
 
 @export
 var SPEED = 300.0
@@ -15,6 +14,7 @@ var hp : int = 10000
 var moving = false
 var canjump = 2
 signal died
+signal hurt
 
 var Interactive_range = false
 var Interacted = null
@@ -42,12 +42,9 @@ func _physics_process(delta: float) -> void:
 	var air = false
 	
 	moving = false
-	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-		# 2. Stop walking sound if we fall or jump into the air
-		walk_sound.stop() 
 		
 		if not is_hurt:
 			animated_sprite_2d.animation = "air"
@@ -56,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		canjump = 2
 		
 
-	# Handle jump.
+
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		moving = true
@@ -68,16 +65,9 @@ func _physics_process(delta: float) -> void:
 	
 	if (velocity.x > 1 or velocity.x < -1) and not air and not is_hurt:
 			animated_sprite_2d.animation = "awful"
-			
-		
-			if not walk_sound.playing:
-				walk_sound.play()
 				
 	elif not air and not is_hurt:
 			animated_sprite_2d.animation = "awful_idle"
-			
-			
-			walk_sound.stop()
 			
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
@@ -115,7 +105,8 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("damage")
 		is_hurt = true
 		point_light.color = Color.RED
-		hp = hp -10
+		hp -= 10 
+		emit_signal("hurt")
 		iframes = 5
 	if iframes > 0:
 		iframes = iframes - delta * 10
