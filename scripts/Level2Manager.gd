@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 
 
 func interactedwith() -> void:
-	objectivesdone = objective_complete +1
+	objectivesdone = objectivesdone +1
 	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = Objectivemessage + " (" + str(objectivesdone) + "/"+ str(total_objectives) + ")"
 	if objectivesdone >= total_objectives:
 		objective_complete = true
