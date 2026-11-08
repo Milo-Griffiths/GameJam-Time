@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://crnbpy1uvjdxl" path="res://scenes/stasis.tscn" id="5_68ib6"]
 [ext_resource type="Texture2D" uid="uid://bh0670lomurw2" path="res://assets/levels/HospitalWallpapers.png" id="5_n5pya"]
 [ext_resource type="PackedScene" uid="uid://c7t04kihoudya" path="res://scenes/levels/TileMap/objects_infront.tscn" id="7_e5nfq"]
+[ext_resource type="Script" uid="uid://pcnauwhgi0bi" path="res://assets/scripts/interactable.gd" id="12_n5pya"]
+[ext_resource type="PackedScene" uid="uid://b4d37ioaqtv6y" path="res://scenes/UI/interaction_ui.tscn" id="13_kypp1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kypp1"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -587,6 +589,8 @@ sources/0 = SubResource("TileSetAtlasSource_p5s5a")
 sources/1 = SubResource("TileSetAtlasSource_njy47")
 sources/2 = SubResource("TileSetAtlasSource_j7nyf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukjja"]
+
 [node name="Level1" type="Node2D" unique_id=1332319202]
 
 [node name="background" parent="." unique_id=2064431650 instance=ExtResource("1_68ib6")]
@@ -640,6 +644,17 @@ position = Vector2(-2100, -1673)
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=512210977]
+position = Vector2(1092, -592)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("12_n5pya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1549951882]
+shape = SubResource("RectangleShape2D_ukjja")
+
+[node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("13_kypp1")]
+
 [connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]
 [connection signal="killed" from="Rat" to="SceneLoader" method="enemykilled"]
@@ -647,3 +662,6 @@ color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 [connection signal="killed" from="Rat3" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat4" to="SceneLoader" method="enemykilled"]
 [connection signal="killed" from="Rat5" to="SceneLoader" method="enemykilled"]
+[connection signal="interactedwith" from="StaticBody2D" to="SceneLoader" method="plant_flower"]
+[connection signal="interactingdist" from="StaticBody2D" to="player" method="_on_static_body_2d_interactingdist"]
+[connection signal="non_interact" from="StaticBody2D" to="player" method="_on_static_body_2d_non_interact"]
