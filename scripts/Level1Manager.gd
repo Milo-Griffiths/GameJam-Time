@@ -18,7 +18,7 @@ func loadnextlevel() -> void:
 	FadeTransition.change_to(level2)
 
 func loaddeath():
-	get_tree().change_scene_to_packed(death)
+	FadeTransition.change_to(death)
 
 func enemykilled():
 	enemieskilled += 1
