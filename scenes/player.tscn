@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fulsm")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"new_animation",
 "speed": 5.0
 }]
@@ -151,7 +151,7 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 SPEED = 400.0
 JUMP_VELOCITY = -500.0
-push_speed = 400
+push_speed = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652721386]
 texture_filter = 1
@@ -182,7 +182,7 @@ script = ExtResource("10_d2wvv")
 texture_filter = 1
 position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
-frame_progress = 0.71388364
+animation = &"new_animation"
 
 [node name="Node2D" type="Node2D" parent="gun" unique_id=1469280456]
 position = Vector2(14.43017, -0.57774687)

@@ -9,7 +9,7 @@ var JUMP_VELOCITY = -400.0
 var hp : int = 10000
 
 var moving = false
-var canjump = true
+var canjump = 2
 signal died
 
 #interaction stuff
@@ -38,8 +38,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:	
 	var air = false
-	var dir_to_mouse: Vector2 = (get_global_mouse_position() - global_position).normalized()
-	var opposite_dir: Vector2 = -dir_to_mouse
+	
 	moving = false
 	# Add the gravity.
 	if not is_on_floor():
@@ -47,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "air"
 		air = true
 	else:
-		canjump = true
+		canjump = 2
 		
 
 	# Handle jump.
@@ -99,5 +98,5 @@ func _on_gun_shot() -> void:
 	var opposite_dir: Vector2 = -((get_global_mouse_position() - global_position).normalized())
 	if not is_on_floor() and  canjump:
 		velocity += opposite_dir * push_speed
-		canjump = false
+		canjump = canjump -1
 	

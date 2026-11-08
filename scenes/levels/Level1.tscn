@@ -605,7 +605,7 @@ position = Vector2(1024, 130)
 scale = Vector2(4, 4)
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(1018, 124)
+position = Vector2(-2341, -1662)
 scale = Vector2(4, 4)
 hp = 100
 

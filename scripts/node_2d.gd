@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 		attackcooldown = attackcooldown - 25 * delta
 
 func shoot():
+	var sprite : AnimatedSprite2D = $"AnimatedSprite2D"
+	sprite.play("new_animation")
 	var point : Node2D = get_node("Node2D")
 	var instance = projectile.instantiate()
 	instance.dir = rotation
