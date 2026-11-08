@@ -112,10 +112,12 @@ target_position = Vector2(15, 0)
 collision_mask = 13
 
 [node name="Playerdetection" type="RayCast2D" parent="." unique_id=773509831]
+visible = false
 target_position = Vector2(15, 0)
 collision_mask = 2
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=1446588431]
+visible = false
 position = Vector2(-7, 0)
 shape = SubResource("CircleShape2D_pdxfl")
 target_position = Vector2(16, 0)
