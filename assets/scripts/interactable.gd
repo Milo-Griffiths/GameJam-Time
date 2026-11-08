@@ -24,10 +24,11 @@ func _process(_delta: float) -> void:
 	
 func _input(event):
 	if event.is_action_pressed("Interact") and interactable:
+		non_interact.emit()
 		print("hdsfdbjkasnd")
 		interactedwith.emit()
-		non_interact.emit()
 		queue_free()
+
 
 	
 	
