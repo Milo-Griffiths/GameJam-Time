@@ -6,6 +6,7 @@ var objective_done = false
 var Objectivemessage1 : String = "Kill the rats"
 var Objectivemessage2 : String = "Plant Flower"
 var flowerplanted : bool = false
+var test : bool = true 
 
 @export
 var total_objectives : int
@@ -23,7 +24,7 @@ func _process(_delta: float) -> void:
 	#get_tree().change_scene_to_packed(level2)
 
 func loadnextlevel() -> void:
-	FadeTransition.change_to(level2)
+	FadeTransition.change_to(level2, "20 years later...")
 
 func loaddeath():
 	FadeTransition.change_to(death)
@@ -49,3 +50,8 @@ func plant_flower() -> void:
 	if enemieskilled == total_objectives and flowerplanted:
 		objective_done = true
 		objectivesdone.emit()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if test and event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_T:
+			loadnextlevel()

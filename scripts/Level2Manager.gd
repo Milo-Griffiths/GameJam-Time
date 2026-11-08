@@ -6,12 +6,13 @@ var objectivesdone = 0
 @export
 var total_objectives : int
 var Objectivemessage : String = "Collect "
+var test : bool = true 
 
 #func loadnextlevel():
 	#get_tree().change_scene_to_packed(level3)
 
 func loadnextlevel() -> void:
-	FadeTransition.change_to(level3)
+	FadeTransition.change_to(level3, "40 years later...")
 
 func loaddeath():
 	get_tree().change_scene_to_packed(death)
@@ -34,8 +35,11 @@ func interactedwith() -> void:
 		objective_complete = true
 		
 
-
-
 func _on_stasis_scene_switch() -> void:
 	if objectivesdone >= total_objectives:
 		loadnextlevel()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if test and event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_T:
+			loadnextlevel()
