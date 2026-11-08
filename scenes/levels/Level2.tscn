@@ -931,7 +931,7 @@ scale = Vector2(4, 4)
 script = ExtResource("1_e5vnl")
 total_objectives = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=125572003]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=125572003 groups=["Objectivenodes"]]
 position = Vector2(257, 22)
 collision_layer = 0
 collision_mask = 0
@@ -950,7 +950,7 @@ text = "e"
 position = Vector2(1040, 127)
 scale = Vector2(4, 4)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1162808164]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1162808164 groups=["Objectivenodes"]]
 position = Vector2(-803, -598)
 collision_layer = 0
 collision_mask = 0

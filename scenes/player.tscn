@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://d2s3l5fy88vfk" path="res://assets/player/sams iteration/New Piskel (12).png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bgguvxlta8hdx" path="res://assets/player/sams iteration/DamagedRobot.png" id="4_fjrip"]
 [ext_resource type="Texture2D" uid="uid://c7yudyglpnk8e" path="res://assets/player/sams iteration/New Piskel (13).png" id="6_fjrip"]
+[ext_resource type="Script" uid="uid://crjqbb771u6ni" path="res://scripts/Arrow.gd" id="8_smehm"]
+[ext_resource type="Texture2D" uid="uid://dnwb18i7mlf27" path="res://assets/RedArrow.png" id="8_ur7pv"]
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
 
@@ -210,7 +212,7 @@ position = Vector2(-0.2672248, 0.095062636)
 shape = SubResource("RectangleShape2D_ca5m7")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1118441573]
-position = Vector2(0.24999928, -8.181875)
+position = Vector2(0.35630083, -0.19012642)
 scale = Vector2(2.9017851, 1.7045201)
 color = Color(0.21900001, 0.73, 0.23603334, 1)
 energy = 0.74
@@ -219,5 +221,14 @@ shadow_enabled = true
 shadow_color = Color(0.003921569, 0, 0.019607844, 0.48235294)
 texture = SubResource("GradientTexture2D_tuyoq")
 texture_scale = 4.0
+
+[node name="arrow" type="Sprite2D" parent="." unique_id=209012290]
+texture_filter = 1
+position = Vector2(-0.42334747, 0)
+rotation = -6.2831855
+scale = Vector2(1.0066147, 1)
+texture = ExtResource("8_ur7pv")
+offset = Vector2(30, 0)
+script = ExtResource("8_smehm")
 
 [connection signal="shot" from="gun" to="." method="_on_gun_shot"]

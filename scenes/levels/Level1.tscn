@@ -614,12 +614,12 @@ scale = Vector2(4, 4)
 hp = 100
 push_speed = 400
 
-[node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
+[node name="Rat" parent="." unique_id=1896690996 groups=["Objectivenodes"] instance=ExtResource("3_x4si1")]
 position = Vector2(-653, 87)
 JUMP_VELOCITY = -200.0
 jumpspeed = 40.0
 
-[node name="Rat2" parent="." unique_id=2127364585 instance=ExtResource("3_x4si1")]
+[node name="Rat2" parent="." unique_id=2127364585 groups=["Objectivenodes"] instance=ExtResource("3_x4si1")]
 position = Vector2(773, -543)
 JUMP_VELOCITY = -200.0
 startbackwards = true
@@ -632,20 +632,20 @@ tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAE
 script = ExtResource("1_fh0io")
 total_objectives = 5
 
-[node name="Rat3" parent="." unique_id=280598135 instance=ExtResource("3_x4si1")]
+[node name="Rat3" parent="." unique_id=280598135 groups=["Objectivenodes"] instance=ExtResource("3_x4si1")]
 position = Vector2(869, -904)
 
-[node name="Rat4" parent="." unique_id=1153267802 instance=ExtResource("3_x4si1")]
+[node name="Rat4" parent="." unique_id=1153267802 groups=["Objectivenodes"] instance=ExtResource("3_x4si1")]
 position = Vector2(-1157, -1320)
 
-[node name="Rat5" parent="." unique_id=1866622043 instance=ExtResource("3_x4si1")]
+[node name="Rat5" parent="." unique_id=1866622043 groups=["Objectivenodes"] instance=ExtResource("3_x4si1")]
 position = Vector2(-2100, -1673)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2039685481]
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=512210977]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=512210977 groups=["Objectivenodes"]]
 position = Vector2(1092, -592)
 collision_layer = 0
 collision_mask = 0
