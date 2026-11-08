@@ -42,7 +42,7 @@ collision_mask = 13
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=320446977]
 position = Vector2(1, 1)
-color = Color(0.00052906433, 11.326449, 1.9766405, 1)
+color = Color(0, 11.325506, 0, 1)
 energy = 12.02
 range_item_cull_mask = 3
 shadow_enabled = true
