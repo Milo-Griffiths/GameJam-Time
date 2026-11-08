@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cwl2wy2d0eo5h" path="res://assets/levels/ErodedHospitalTilemap.png" id="6_a6cvn"]
 [ext_resource type="PackedScene" uid="uid://b4d37ioaqtv6y" path="res://scenes/UI/interaction_ui.tscn" id="6_interaction_ui"]
 [ext_resource type="PackedScene" uid="uid://c7t04kihoudya" path="res://scenes/levels/TileMap/objects_infront.tscn" id="8_dwyyt"]
+[ext_resource type="PackedScene" uid="uid://c7t18ij718wn0" path="res://scenes/Enemies/rat2.tscn" id="14_6rin4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kypp1"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -960,6 +961,15 @@ shape = SubResource("RectangleShape2D_interaction")
 visible = false
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
+
+[node name="Rat" parent="." unique_id=2127364585 instance=ExtResource("14_6rin4")]
+position = Vector2(-2180, -1727)
+path = "Level2"
+
+[node name="Rat2" parent="." unique_id=902151297 instance=ExtResource("14_6rin4")]
+position = Vector2(762, -1303)
+startbackwards = true
+path = "Level2"
 
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]
 [connection signal="interactedwith" from="StaticBody2D" to="SceneLoader" method="interactedwith"]
