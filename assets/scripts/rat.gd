@@ -24,6 +24,7 @@ var playerray : RayCast2D
 var sprite : AnimatedSprite2D
 var manager : Node2D
 var bulletdetection : ShapeCast2D
+var cliffdetection : RayCast2D
 var jumping : bool = false
 
 func _ready() -> void:
@@ -31,6 +32,7 @@ func _ready() -> void:
 	playerray = $Playerdetection
 	sprite = $AnimatedSprite2D
 	bulletdetection = $ShapeCast2D
+	cliffdetection = $CliffDetection
 	if startbackwards:
 		flip()
 	
@@ -58,6 +60,8 @@ func _physics_process(delta: float) -> void:
 		elif target < 0 and dir == 1:
 			flip()
 		velocity.y = JUMP_VELOCITY
+	if !cliffdetection.is_colliding() and is_on_floor():
+		flip()
 	
 
 	if not is_on_floor():
