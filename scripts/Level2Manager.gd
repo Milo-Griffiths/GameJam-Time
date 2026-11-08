@@ -26,10 +26,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("cheat"):
 		objectivesdone = 50
+	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = Objectivemessage + " (" + str(objectivesdone) + "/"+ str(total_objectives) + ")"
 
 
 func interactedwith() -> void:
-	objectivesdone += 1
+	objectivesdone = objectivesdone +1
 	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText".text = Objectivemessage + " (" + str(objectivesdone) + "/"+ str(total_objectives) + ")"
 	if objectivesdone >= total_objectives:
 		objective_complete = true
