@@ -655,6 +655,7 @@ script = ExtResource("12_n5pya")
 shape = SubResource("RectangleShape2D_ukjja")
 
 [node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("13_kypp1")]
+text = "e"
 
 [connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]

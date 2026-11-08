@@ -943,6 +943,7 @@ shape = SubResource("RectangleShape2D_interaction")
 tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAEAAAD7//L/AQAEAAAAAAD8//L/AQAEAAEAAAD5//L/AQABAAIAAAA=")
 
 [node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("6_interaction_ui")]
+text = "E"
 
 [node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_1xtnv")]
 position = Vector2(1040, 127)
