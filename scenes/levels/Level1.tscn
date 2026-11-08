@@ -632,7 +632,7 @@ position = Vector2(-2100, -1673)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2039685481]
 light_mask = 2
-color = Color(0.80261624, 0.80261624, 0.8026162, 1)
+color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
 [connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]

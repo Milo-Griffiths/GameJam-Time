@@ -16,3 +16,5 @@ func _process(delta: float) -> void:
 	elif (time <= 0):
 		get_tree().change_scene_to_file("res://scenes/Death/Death.tscn")
 	$".".value = (time/Initial_Time)* 100;
+
+	$"Label".text = str(int(time))
