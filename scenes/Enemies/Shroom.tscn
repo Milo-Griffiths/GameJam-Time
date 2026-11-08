@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://c5r1hd7mpip1w"]
 
-[node name="Shroom" type="Node2D" unique_id=1134589370]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6io4"]
+radius = 6.25
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdxfl"]
+
+[node name="Shroom" type="CharacterBody2D" unique_id=958410507]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291169072]
+position = Vector2(-0.25, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_n6io4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995578220]
+sprite_frames = SubResource("SpriteFrames_pdxfl")
+
+[node name="Gun" type="Node2D" parent="." unique_id=216455826]
+
+[node name="point" type="Node2D" parent="Gun" unique_id=1737752422]
