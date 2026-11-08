@@ -8,8 +8,9 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_50a1s"]
 font = ExtResource("2_q3y81")
-font_size = 40
-font_color = Color(0.11956812, 0.58406, 0.13943455, 1)
+font_size = 70
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Player_UI" type="Control" unique_id=1594529095]
 layout_mode = 3
@@ -27,7 +28,7 @@ layout_mode = 0
 offset_left = 233.0
 offset_top = 17.0
 offset_right = 596.0
-offset_bottom = 73.0
+offset_bottom = 97.0
 show_percentage = false
 script = ExtResource("1_lwipk")
 

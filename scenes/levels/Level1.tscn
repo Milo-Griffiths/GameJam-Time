@@ -587,15 +587,6 @@ sources/0 = SubResource("TileSetAtlasSource_p5s5a")
 sources/1 = SubResource("TileSetAtlasSource_njy47")
 sources/2 = SubResource("TileSetAtlasSource_j7nyf")
 
-[sub_resource type="Gradient" id="Gradient_lha2r"]
-offsets = PackedFloat32Array(0.012048192, 0.20783132)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t1b08"]
-gradient = SubResource("Gradient_lha2r")
-fill = 1
-fill_from = Vector2(0.49565217, 0.5)
-
 [node name="Level1" type="Node2D" unique_id=1332319202]
 
 [node name="background" parent="." unique_id=2064431650 instance=ExtResource("1_68ib6")]
@@ -617,17 +608,6 @@ scale = Vector2(4, 4)
 position = Vector2(1018, 124)
 scale = Vector2(4, 4)
 hp = 100
-
-[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=815845197]
-position = Vector2(0.24999928, -8.181875)
-scale = Vector2(2.9017851, 1.7045201)
-color = Color(0.21900001, 0.73, 0.23603334, 1)
-energy = 0.74
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_color = Color(0.003921569, 0, 0.019607844, 0.48235294)
-texture = SubResource("GradientTexture2D_t1b08")
-texture_scale = 4.0
 
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]
 position = Vector2(-653, 87)
