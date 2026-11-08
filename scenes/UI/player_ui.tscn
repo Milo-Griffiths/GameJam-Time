@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ck4w6t8ko18lw" path="res://scenes/UI/objective_ui.tscn" id="2_50a1s"]
 [ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="2_q3y81"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5m0x8"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_50a1s"]
 font = ExtResource("2_q3y81")
 font_size = 70
@@ -20,28 +18,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=367329032]
-visibility_layer = 7
-z_index = 3
-material = SubResource("CanvasItemMaterial_5m0x8")
+[node name="Label" type="Label" parent="." unique_id=1472858223]
+z_index = 2
 layout_mode = 0
-offset_left = 233.0
-offset_top = 17.0
-offset_right = 596.0
-offset_bottom = 97.0
-show_percentage = false
-script = ExtResource("1_lwipk")
-
-[node name="Label" type="Label" parent="ProgressBar" unique_id=1472858223]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 4.0
-offset_right = 360.0
-offset_bottom = 52.0
+offset_left = 238.0
+offset_top = 21.0
+offset_right = 593.0
+offset_bottom = 92.0
 text = "1500"
 label_settings = SubResource("LabelSettings_50a1s")
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("1_lwipk")
 
 [node name="objective_ui" parent="." unique_id=905169599 instance=ExtResource("2_50a1s")]
 layout_mode = 1
