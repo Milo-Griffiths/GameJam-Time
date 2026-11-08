@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c7yudyglpnk8e" path="res://assets/player/sams iteration/New Piskel (13).png" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://crjqbb771u6ni" path="res://scripts/Arrow.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://dnwb18i7mlf27" path="res://assets/RedArrow.png" id="8_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://bcjn1duhh5h5u" path="res://assets/Gun9.wav" id="8_y4r1p"]
 [ext_resource type="Script" uid="uid://ke2bafswrk1j" path="res://scripts/node_2d.gd" id="10_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://wiyrhm8fwxox" path="res://scenes/UI/player_ui.tscn" id="10_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://c24qnw5vp613i" path="res://assets/Jump.wav" id="11_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_tuyoq")
@@ -203,6 +205,10 @@ animation = &"new_animation"
 [node name="Node2D" type="Node2D" parent="gun" unique_id=1469280456]
 position = Vector2(14.43017, -0.57774687)
 
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="gun" unique_id=228476745]
+stream = ExtResource("8_y4r1p")
+max_polyphony = 5
+
 [node name="HitBox" type="Area2D" parent="." unique_id=937890994]
 position = Vector2(-0.26722568, -4.0796442e-07)
 collision_layer = 4
@@ -231,5 +237,10 @@ scale = Vector2(1.0066147, 1)
 texture = ExtResource("8_ur7pv")
 offset = Vector2(30, 0)
 script = ExtResource("8_smehm")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=364671777]
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=996575568]
+stream = ExtResource("11_d2wvv")
 
 [connection signal="shot" from="gun" to="." method="_on_gun_shot"]

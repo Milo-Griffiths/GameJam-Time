@@ -1,6 +1,7 @@
 extends Node2D
 @onready var main = get_tree().get_root().get_child(1)
 @onready var projectile = load("res://scenes/bullet.tscn")
+@onready var shoot_sound = $ShootSound
 signal shot
 var attackcooldown = 0
 
@@ -22,6 +23,7 @@ func _process(delta: float) -> void:
 func shoot():
 	var sprite : AnimatedSprite2D = $"AnimatedSprite2D"
 	sprite.play("new_animation")
+	shoot_sound.play()
 	var point : Node2D = get_node("Node2D")
 	var instance = projectile.instantiate()
 	instance.dir = rotation
