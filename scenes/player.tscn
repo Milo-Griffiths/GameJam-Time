@@ -179,6 +179,7 @@ shape = SubResource("RectangleShape2D_t1b08")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980265435]
 
 [node name="Player_UI" parent="Camera2D" unique_id=1594529095 instance=ExtResource("10_y4r1p")]
+light_mask = 2
 offset_left = -213.06769
 offset_top = -12.358139
 offset_right = -213.06769

@@ -1,10 +1,51 @@
 [gd_scene format=3 uid="uid://c5r1hd7mpip1w"]
 
+[ext_resource type="Texture2D" uid="uid://ddmln1d2d7ye2" path="res://assets/enemies/SporeBossMain.png" id="1_bkbdi"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6io4"]
 radius = 6.25
 height = 24.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg4ta"]
+atlas = ExtResource("1_bkbdi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whnba"]
+atlas = ExtResource("1_bkbdi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3syok"]
+atlas = ExtResource("1_bkbdi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou8k4"]
+atlas = ExtResource("1_bkbdi")
+region = Rect2(384, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pdxfl"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg4ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whnba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3syok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou8k4")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 2.0
+}]
 
 [node name="Shroom" type="CharacterBody2D" unique_id=958410507]
 
@@ -14,7 +55,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_n6io4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995578220]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pdxfl")
+animation = &"new_animation"
+frame_progress = 0.16169757
 
 [node name="Gun" type="Node2D" parent="." unique_id=216455826]
 
