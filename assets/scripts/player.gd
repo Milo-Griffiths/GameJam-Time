@@ -21,20 +21,22 @@ var Interacted = null
 @export
 var push_speed = 900
 var iframes = 0
-
-
+var is_hurt = false
+var light_default_colour
 @export var ACCEL_GROUND: float = 2000.0
 @export var ACCEL_AIR: float = 500.0
-func _process(delta: float) -> void:
-	if hit_box.has_overlapping_bodies() and iframes <= 0:
-		print("damage")
-		hp = hp -10
-		iframes = 5
-	if iframes > 0:
-		iframes = iframes - delta * 10
-	if hp <= 0:
-		died.emit()
+@onready var point_light: PointLight2D = $PointLight2D
 
+func _ready() -> void:
+	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
+	light_default_colour = point_light.color
+
+func _on_animation_finished() -> void:
+	if animated_sprite_2d.animation == "damage":
+		point_light.color = light_default_colour
+		is_hurt = false
+		animated_sprite_2d.play()
+		
 
 func _physics_process(delta: float) -> void:	
 	var air = false
@@ -43,7 +45,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		animated_sprite_2d.animation = "air"
+		if not is_hurt:
+			animated_sprite_2d.animation = "air"
 		air = true
 	else:
 		canjump = 2
@@ -57,9 +60,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	var accel := ACCEL_GROUND if is_on_floor() else ACCEL_AIR
-	if (velocity.x > 1 or velocity.x < -1) and not air:
+	if (velocity.x > 1 or velocity.x < -1) and not air and not is_hurt:
 			animated_sprite_2d.animation = "awful"
-	elif not air:
+	elif not air and not is_hurt:
+			
 			animated_sprite_2d.animation = "awful_idle"
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
@@ -92,6 +96,19 @@ func _on_static_body_2d_non_interact() -> void:
 
 	if ui != null:
 		ui.hide_prompt()
+
+func _process(delta: float) -> void:
+	if hit_box.has_overlapping_bodies() and iframes <= 0:
+		print("damage")
+		animated_sprite_2d.play("damage")
+		is_hurt = true
+		point_light.color = Color.RED
+		hp = hp -10
+		iframes = 5
+	if iframes > 0:
+		iframes = iframes - delta * 10
+	if hp <= 0:
+		died.emit()
 
 
 func _on_gun_shot() -> void:
