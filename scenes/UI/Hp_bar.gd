@@ -9,7 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$".".value = (float(health)/float(maxhp))*100 
-	print((health/maxhp)*100)
 
 func damadge(dmg):
 	health -= dmg
