@@ -9,7 +9,7 @@ var SPEED = 300.0
 @export
 var JUMP_VELOCITY = -400.0
 @export
-var hp : int = 10000
+var hp : int = 100
 
 var moving = false
 var canjump = 2
@@ -101,7 +101,6 @@ func _on_static_body_2d_non_interact() -> void:
 
 func _process(delta: float) -> void:
 	if hit_box.has_overlapping_bodies() and iframes <= 0:
-		print("damage")
 		animated_sprite_2d.play("damage")
 		is_hurt = true
 		point_light.color = Color.RED

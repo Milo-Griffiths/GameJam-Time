@@ -25,24 +25,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8xbeg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122940135]
-position = Vector2(119.5, 73.5)
-scale = Vector2(2.96875, 2.84375)
-texture = ExtResource("2_rns76")
-
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1539345929]
 light_mask = 4
 material = SubResource("CanvasItemMaterial_op1xx")
 layout_mode = 0
 offset_left = 83.0
-offset_top = 26.0
+offset_top = 30.0
 offset_right = 158.0
 offset_bottom = 115.0
 fill_mode = 3
 script = ExtResource("1_hxbk0")
 
+[node name="Sprite2D" type="Sprite2D" parent="ProgressBar" unique_id=122940135]
+position = Vector2(36.5, 43.5)
+scale = Vector2(2.96875, 2.84375)
+texture = ExtResource("2_rns76")
+
 [node name="Label" type="Label" parent="." unique_id=1472858223]
-visible = false
 light_mask = 5
 z_index = 2
 layout_mode = 0

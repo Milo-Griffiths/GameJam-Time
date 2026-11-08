@@ -956,7 +956,8 @@ script = ExtResource("5_interactable")
 shape = SubResource("RectangleShape2D_interaction")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=922661431]
-visible = false
+modulate = Color(0.34108615, 0.34108615, 0.34108615, 1)
+self_modulate = Color(0.4075654, 0.40756536, 0.40756533, 1)
 light_mask = 2
 color = Color(0.4630679, 0.4630683, 0.4630682, 1)
 
