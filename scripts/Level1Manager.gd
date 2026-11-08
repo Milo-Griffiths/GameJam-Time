@@ -46,3 +46,6 @@ func _on_stasis_scene_switch() -> void:
 func plant_flower() -> void:
 	flowerplanted = true
 	$"../player/Camera2D/Player_UI/objective_ui/CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ObjectiveText2".text = Objectivemessage2 + " (" + str(1) + "/"+ str(1) + ")"
+	if enemieskilled == total_objectives and flowerplanted:
+		objective_done = true
+		objectivesdone.emit()
