@@ -26,7 +26,11 @@ func _process(_delta: float) -> void:
 func loadnextlevel() -> void:
 	FadeTransition.change_to(level2, "20 years later...")
 
+<<<<<<< HEAD
 func loaddeath():
+=======
+func loaddeath() -> void:
+>>>>>>> refs/remotes/origin/main
 	get_tree().change_scene_to_packed(death)
 
 func enemykilled():
@@ -51,6 +55,7 @@ func plant_flower() -> void:
 		objective_done = true
 		objectivesdone.emit()
 
+# Test function to skip level (Press T)
 func _unhandled_input(event: InputEvent) -> void:
 	if test and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_T:

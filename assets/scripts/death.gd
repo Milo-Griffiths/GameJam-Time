@@ -1,6 +1,5 @@
 extends Control
 
-#RESTART THE FUCKING GAME 
 func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 

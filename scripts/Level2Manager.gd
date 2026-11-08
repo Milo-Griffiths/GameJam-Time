@@ -39,6 +39,7 @@ func _on_stasis_scene_switch() -> void:
 	if objectivesdone >= total_objectives:
 		loadnextlevel()
 
+# Test function to skip level (Press T)
 func _unhandled_input(event: InputEvent) -> void:
 	if test and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_T:
