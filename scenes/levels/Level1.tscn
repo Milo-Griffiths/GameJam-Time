@@ -25,7 +25,7 @@ position = Vector2(1029, 111)
 scale = Vector2(4, 4)
 
 [node name="player" parent="." unique_id=1097559639 instance=ExtResource("2_j08sa")]
-position = Vector2(1032, 118)
+position = Vector2(249, -15)
 scale = Vector2(4, 4)
 
 [node name="Rat" parent="." unique_id=1896690996 instance=ExtResource("3_x4si1")]

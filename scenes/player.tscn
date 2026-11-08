@@ -168,5 +168,5 @@ position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_ohs4u")
 frame_progress = 0.71388364
 
-[node name="Node2D" type="Node2D" parent="gun" unique_id=1983733177]
-position = Vector2(13, -0.5)
+[node name="Node2D" type="Node2D" parent="gun" unique_id=1469280456]
+position = Vector2(14.43017, -0.57774687)
