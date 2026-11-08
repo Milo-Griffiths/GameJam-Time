@@ -11,6 +11,7 @@ var hp : int = 10000
 var moving = false
 var canjump = 2
 signal died
+signal hurt
 
 #interaction stuff
 #var Interact_prompt = load("res://scenes/UI/interaction_ui.tscn")
@@ -103,7 +104,8 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("damage")
 		is_hurt = true
 		point_light.color = Color.RED
-		hp = hp -10
+		hp -= 10 
+		emit_signal("hurt")
 		iframes = 5
 	if iframes > 0:
 		iframes = iframes - delta * 10

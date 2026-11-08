@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://wiyrhm8fwxox"]
 
+[ext_resource type="Script" uid="uid://8y7orgtwx71c" path="res://scenes/UI/emit.gd" id="1_8xbeg"]
+[ext_resource type="Script" uid="uid://ddtb2uui8nox2" path="res://scenes/UI/Hp_bar.gd" id="1_hxbk0"]
 [ext_resource type="Script" uid="uid://dmahjb457dsuw" path="res://assets/scripts/BatteryTimer.gd" id="1_lwipk"]
 [ext_resource type="PackedScene" uid="uid://ck4w6t8ko18lw" path="res://scenes/UI/objective_ui.tscn" id="2_50a1s"]
 [ext_resource type="FontFile" uid="uid://dq8qcabj6yktb" path="res://GrapeSoda.ttf" id="2_q3y81"]
+[ext_resource type="Texture2D" uid="uid://vqvm5rjv4std" path="res://assets/player/New Piskel (14).png" id="2_rns76"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_op1xx"]
+blend_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_50a1s"]
 font = ExtResource("2_q3y81")
@@ -17,8 +23,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8xbeg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122940135]
+position = Vector2(119.5, 73.5)
+scale = Vector2(2.96875, 2.84375)
+texture = ExtResource("2_rns76")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1539345929]
+light_mask = 4
+material = SubResource("CanvasItemMaterial_op1xx")
+layout_mode = 0
+offset_left = 83.0
+offset_top = 26.0
+offset_right = 158.0
+offset_bottom = 115.0
+fill_mode = 3
+script = ExtResource("1_hxbk0")
 
 [node name="Label" type="Label" parent="." unique_id=1472858223]
+visible = false
+light_mask = 5
 z_index = 2
 layout_mode = 0
 offset_left = 238.0
@@ -32,8 +57,12 @@ vertical_alignment = 1
 script = ExtResource("1_lwipk")
 
 [node name="objective_ui" parent="." unique_id=905169599 instance=ExtResource("2_50a1s")]
+visible = false
+light_mask = 4
 layout_mode = 1
 offset_left = 1.0
 offset_top = 2.0
 offset_right = 1.0
 offset_bottom = 2.0
+
+[connection signal="hit" from="." to="ProgressBar" method="_on_player_ui_hit"]

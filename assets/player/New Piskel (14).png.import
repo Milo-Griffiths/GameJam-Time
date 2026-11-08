@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgguvxlta8hdx"
-path="res://.godot/imported/DamagedRobot.png-ee51f7b4600738efa7fc184693f9c84d.ctex"
+uid="uid://vqvm5rjv4std"
+path="res://.godot/imported/New Piskel (14).png-2de99644d76f95a39d5c333bf20918ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/sams iteration/DamagedRobot.png"
-dest_files=["res://.godot/imported/DamagedRobot.png-ee51f7b4600738efa7fc184693f9c84d.ctex"]
+source_file="res://assets/player/New Piskel (14).png"
+dest_files=["res://.godot/imported/New Piskel (14).png-2de99644d76f95a39d5c333bf20918ef.ctex"]
 
 [params]
 

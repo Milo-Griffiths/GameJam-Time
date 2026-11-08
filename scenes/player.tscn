@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dsw5u2roqe50o" path="res://assets/scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bayb1tjucempf" path="res://assets/player/sams iteration/New Piskel (14).png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://d2s3l5fy88vfk" path="res://assets/player/sams iteration/New Piskel (12).png" id="2_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://bgguvxlta8hdx" path="res://assets/player/sams iteration/DamagedRobot.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://byf67l1cd0shr" path="res://assets/player/sams iteration/DamagedRobot (1).png" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://c7yudyglpnk8e" path="res://assets/player/sams iteration/New Piskel (13).png" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://crjqbb771u6ni" path="res://scripts/Arrow.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://dnwb18i7mlf27" path="res://assets/RedArrow.png" id="8_ur7pv"]
@@ -28,10 +28,6 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_tuyoq")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("4_fjrip")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
@@ -87,7 +83,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4r5pv")
+"texture": ExtResource("4_ur7pv")
 }],
 "loop": 0,
 "name": &"damage",
@@ -232,4 +228,5 @@ texture = ExtResource("8_ur7pv")
 offset = Vector2(30, 0)
 script = ExtResource("8_smehm")
 
+[connection signal="hurt" from="." to="Camera2D/Player_UI" method="_on_player_hurt"]
 [connection signal="shot" from="gun" to="." method="_on_gun_shot"]
