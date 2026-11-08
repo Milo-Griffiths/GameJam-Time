@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cwl2wy2d0eo5h" path="res://assets/levels/ErodedHospitalTilemap.png" id="6_cw4sw"]
 [ext_resource type="PackedScene" uid="uid://bia8i4os3rjlw" path="res://scenes/levels/TileMap/objects_behind.tscn" id="7_vjdto"]
 [ext_resource type="Script" uid="uid://byy1qgmjqy84h" path="res://scripts/Level3Manager.gd" id="8_4n27n"]
-[ext_resource type="Script" uid="uid://pcnauwhgi0bi" path="res://assets/scripts/interactable.gd" id="8_bqc3i"]
 [ext_resource type="PackedScene" uid="uid://c7t04kihoudya" path="res://scenes/levels/TileMap/objects_infront.tscn" id="9_ljeji"]
 [ext_resource type="PackedScene" uid="uid://b4d37ioaqtv6y" path="res://scenes/UI/interaction_ui.tscn" id="10_8qlrg"]
 [ext_resource type="Texture2D" uid="uid://341arlycchij" path="res://assets/damage.png" id="14_cw4sw"]
@@ -907,8 +906,6 @@ sources/1 = SubResource("TileSetAtlasSource_rs68w")
 sources/2 = SubResource("TileSetAtlasSource_20mws")
 sources/3 = SubResource("TileSetAtlasSource_ewe7k")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8kw8"]
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjdto"]
 texture = ExtResource("14_cw4sw")
 0:0/0 = 0
@@ -918,8 +915,6 @@ texture = ExtResource("14_cw4sw")
 
 [sub_resource type="TileSet" id="TileSet_c68tw"]
 sources/0 = SubResource("TileSetAtlasSource_vjdto")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i7gq"]
 
 [node name="Level3" type="Node2D" unique_id=65965820]
 
@@ -937,15 +932,6 @@ tile_map_data = PackedByteArray("AAAMAAEAAQAAAAEAAAAMAAIAAQAAAAIAAAAKAAEAAQAAAAE
 [node name="SceneLoader" type="Node2D" parent="." unique_id=1501661409]
 script = ExtResource("8_4n27n")
 
-[node name="Interaction object" type="StaticBody2D" parent="." unique_id=1058169695]
-position = Vector2(257, 22)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("8_bqc3i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction object" unique_id=809752469]
-shape = SubResource("RectangleShape2D_h8kw8")
-
 [node name="Objects-infront" parent="." unique_id=988419828 instance=ExtResource("9_ljeji")]
 tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAEAAAD7//L/AQAEAAAAAAD8//L/AQAEAAEAAAD5//L/AQABAAIAAAA=")
 
@@ -961,15 +947,6 @@ text = "e"
 [node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_g0tkw")]
 position = Vector2(1040, 127)
 scale = Vector2(4, 4)
-
-[node name="interactionObject" type="StaticBody2D" parent="." unique_id=1190252076]
-position = Vector2(-803, -598)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("8_bqc3i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionObject" unique_id=1292644686]
-shape = SubResource("RectangleShape2D_0i7gq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1200496434]
 light_mask = 2
