@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if inside == true && Input.is_action_just_pressed("up"):
+	if inside == true && Input.is_action_just_pressed("Interact"):
 		loadscene()
 
 func loadscene():
@@ -23,5 +23,3 @@ func _on_area_2d_body_exited(_body: CharacterBody2D) -> void:
 
 func _on_area_2d_body_entered(_body: CharacterBody2D) -> void:
 	inside = true
-
-

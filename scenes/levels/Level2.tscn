@@ -946,10 +946,6 @@ tile_map_data = PackedByteArray("AAAFAPL/AQAAAAAAAAAGAPL/AQABAAAAAAD6//L/AQADAAE
 [node name="interaction_ui" parent="." unique_id=1228004694 instance=ExtResource("6_interaction_ui")]
 text = "e"
 
-[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_1xtnv")]
-position = Vector2(1040, 127)
-scale = Vector2(4, 4)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1162808164 groups=["Objectivenodes"]]
 position = Vector2(-803, -598)
 collision_layer = 0
@@ -977,11 +973,15 @@ position = Vector2(608, -575)
 target_distance = 600.0
 path = "Level2"
 
+[node name="stasis" parent="." unique_id=293602661 instance=ExtResource("4_1xtnv")]
+position = Vector2(1040, 127)
+scale = Vector2(4, 4)
+
 [connection signal="died" from="player" to="SceneLoader" method="loaddeath"]
 [connection signal="interactedwith" from="StaticBody2D" to="SceneLoader" method="flower_picked"]
 [connection signal="interactingdist" from="StaticBody2D" to="player" method="_on_static_body_2d_interactingdist"]
 [connection signal="non_interact" from="StaticBody2D" to="player" method="_on_static_body_2d_non_interact"]
-[connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
 [connection signal="interactedwith" from="StaticBody2D2" to="SceneLoader" method="interactedwith"]
 [connection signal="interactingdist" from="StaticBody2D2" to="player" method="_on_static_body_2d_interactingdist"]
 [connection signal="non_interact" from="StaticBody2D2" to="player" method="_on_static_body_2d_non_interact"]
+[connection signal="sceneSwitch" from="stasis" to="SceneLoader" method="_on_stasis_scene_switch"]
